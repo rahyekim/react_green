@@ -18,7 +18,7 @@ function App() {
           </div>
         </div>
 
-        <div className="row">
+        <div className="gallery-row">
           <div className="col col-md-one-half">
             <div className="info-box-tan">
               <h2>Inspring Reads</h2>
@@ -35,7 +35,7 @@ function App() {
           </div>
         </div>
         
-        <div className="row">
+        <div className="gallery-row">
           <div className="col col-md-one-half col-lg-one-fourth">
             <img src="img/gallery-1.jpg" alt="gallery1" />
           </div>

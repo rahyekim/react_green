@@ -1,0 +1,41 @@
+@media (min-width:768px){
+    //최소 768픽셀 이상부터 태블릿일때
+   
+        body{
+            max-width: 778px; //1200px ;
+            margin: 0 auto;
+            .style-nav{
+                ul{
+                    text-align: center;
+                    li{
+                        display: inline-block;
+                    }
+                }
+            }
+            h1{ font-size: 40px; margin-bottom:90px;}
+            h2{  margin-bottom:16px;}
+
+            .col-md-one-half{ 
+                /*모바일에서는 사용X
+                768px 패드size부터 보임*/
+                width: 50%;
+               
+ 
+             
+            }
+            
+          
+            .gallery-row{
+            // float:left;
+            display: flex;
+            flex-wrap:wrap;
+            }
+           
+            header {
+                .row{
+                    display:block;
+                }
+            }
+        }
+    
+}
