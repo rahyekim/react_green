@@ -26,10 +26,12 @@ function myString(){
 function getUrl(){
     window.location.href= "https://www.youtube.com"
 }
-/* 아이디로 찾지않고 document에 집어넣기 단점: 어디에서 튀어나올지 몰라
+/* 아이디로 찾지않고 document에 집어넣기 옛날방식
+ document.write(7+9)
+단점: 어디에서 튀어나올지 몰라
 정석대로 사용하는 것이 좋다-> DOM방식: document.getElementById("").innerHTML= "16"
  */
-document.write(7+9) ;//옛날방식
+
 
 /*      es6 (ECMAScript 2015) 
     자바스크립트의 표준규격인 6번째 버젼 
@@ -55,7 +57,7 @@ var add = function ( a,b ) {
 
 const add2 = (a,b)=> (a+b) ;
 
-/* `백틱 사용하여 문자열안에 변수나 식을 쉽게  */
+/* `백틱 사용하여 문자열안에 변수나 식을 쉽게 사용*/
 const name= "google";
 
 console.log(`hello ${name}`)

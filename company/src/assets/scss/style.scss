@@ -6,17 +6,17 @@
 html {
     font-size: 1rem; //1rem = 16px
     body{
-        margin-left:auto; margin-right: auto; // margin: 0 auto; 가운데정렬
+        margin: 0 auto; //margin-left:auto; margin-right: auto; 가운데정렬
         background-color: #e6f4f8;
 
         img { /*이프로젝트에서 img 태그가4개들어가는데 각각의 크기가 다르기때문에
             기본크기를 잡아주는것이다.*/
         width: 100%; //가로크기는 100
-        max-width: 100%; 
+        max-width: 100%;  //부모 안에서만 유동적으로 조절되도록 설정
         /* 최대크기가 100% 브러우저가 면적이 변동될때 가로폭을 맞춤 : 유동픽셀
         꽉채우되, 절대 넘치지는 마.. 부모안에서만(pixel이 더클경우)
         반대가 min-width: 100% 고정픽셀 */
-        height: auto; //가로비율에 맞춰 세로를 자동조절 (이미지는 가로세로비율이잇음)
+        height: auto; //가로비율에 맞춰 세로 자동조절 (이미지는 가로세로비율이잇음)
         vertical-align: middle; //세로정렬을 가운데로
         }   
         header{
@@ -28,8 +28,8 @@ html {
             .style-logo{
                 width: 12rem; //12rem = 192px
                 display: block; // 해당 element가 무조건한줄차지 
-                margin: 0 auto; /* margin-left: auto; 
-                                  margin-right: auto;*/
+                margin-left: auto; 
+                margin-right: auto;
             }
             .style-nav{
                 ul{
@@ -52,14 +52,14 @@ html {
         }
 
         .hero{ //백그라운드로 이미지 
-            // text-align: center;
-            background-image: url(img/hero.jpg); //public은 절대경로
+            text-align: center;
+            background-image: url(/img/hero.jpg); //public은 절대경로
             background-size: cover; 
             //박스 전체를 이미지로 빈틈없이 꽉 채우기
             padding: 20px 20px 50px 20px ;// 상 우 하 좌 
             /* 사방 -> 위아래 좌우 -> 위 아래 좌우 -> 상 우 하 좌 */
             color: #fff;
-            //background-position: center;
+            background-position: center;
             background-repeat: no-repeat; 
             /*배경이미지 꽉채우기 세트 4개
             -image, -size , -repeat , -position */
@@ -67,7 +67,7 @@ html {
      
         .button{
             border: 2px #fff solid ;
-            padding: 0.5rem 2rem; // 위아래 좌우 
+            padding: 0.5rem 2rem; // 8px 32px위아래 좌우 
             color: whitesmoke;
             border-radius: 1rem;
         }
@@ -108,30 +108,36 @@ html {
             text-align: center;
         }
         .info-box-dark{
-            background-color: #b9aa;
+            background-color: rgba(206, 155, 182, 0.667);
             color: #fff;
             padding: 30px 20px 60px;
             text-align: center;
         }
 
         footer{
+            padding: 30px 20px;
+            background-color: #f8f9fa;
+
             .footer-text{
+                color: #666;
                 font-size: 13px;
+                line-height: 1.2; //줄간격 기본보다 1.2배
+
                 margin-bottom: 5px;
                 margin-top: 10px;
                 text-align: center;
-                padding: 1rem;
                 
             }
         }
-
-        .row:before, .row:after {
-            content:"";
-            display: table;
-        }
-        .row:after{
-            clear:both;
-        }
+        //Float 해제를 위한 전통적인 clearfix 기법 구조
+        /* float 속성을 써서 레이아웃을 잡으면 부모 상자가 쪼그라드는 버그 */
+        // .row:before, .row:after {
+        //     content:"";
+        //     display: table;
+        // }
+        // .row:after{
+        //     clear:both;
+        // }
     }
 }
 
