@@ -33,13 +33,13 @@ function getUrl(){
  */
 
 
-/*      es6 (ECMAScript 2015) 
+/*      ****es6 (ECMAScript 2015)**** 
     자바스크립트의 표준규격인 6번째 버젼 
     가장 큰 변화와 혁신을 가져온 업데이트
     
     var 맘대로 바꾸는게 가능해서 프로그래밍 혼란 
     const 등장 : 재선언 재할당 금지 
-    let: 재할당(=) 가능, 재선언(let) 에러 ( let a=1 let a=2 에러남)
+    let: 재할당(=) 가능, 재선언(let =) 에러 ( let a=1 let a=2 에러남)
     
 */
 
