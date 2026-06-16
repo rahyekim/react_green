@@ -2,6 +2,14 @@ let count = 0; // 숫자를 담을 그릇을 만들고 0으로
 
 // let 은 바꿀수있는 변수에 선언
 // html요소 가져오기 => 화면에 있는 태그들을 자바스크립트가 제어하게 데려오겟음
+/*
+ * HTML = 화면(버튼/숫자/박스)
+JS = 그 화면을 조종하는 ...
+getElementById = 화면 특정 부품(요소..div,button) 통째로 꺼내서 가져오기...
+
+ */
+
+
 const display= document.getElementById('number')
 const upBtn= document.getElementById('up')
 const downBtn= document.getElementById('down')
