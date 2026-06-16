@@ -10,6 +10,7 @@ text += cars[1] + "<br>";
 text += cars[2] + "<br>";
 text += cars[3] + "<br>";
 text += cars[4] + "<br>";
+
 document.getElementById('bad').innerHTML = text;
 
  let car = "";
@@ -31,25 +32,26 @@ document.getElementById('good').innerHTML = car;
 // while loop
 
 let nums = "";
-let n = 0;
+let n = 0; //초기식
 
-while (n<10){
-    nums += "출력되는숫자는" + n + "<br>"
-    n++; // 증가를 선언하지 않으면 무한 루프에 빠진다.....블랙홀....
+while (n<9){ //조건식
+    // nums += "출력되는숫자는" + n + "<br>"
+    nums += `출력되는 숫자는 ${n}<br/>`
+    n++; // 증감식 : 증가를 선언하지 않으면 무한 루프에 빠진다.....블랙홀....
 }
 document.getElementById("while").innerHTML = nums;
 
 //do while loop
 
-let numss = "";
+let num = "";
 let m = 0;
 
 do {
-    numss += "출력되는숫자는" + m + "<br>"
+    num += "출력되는숫자는" + m + "<br>"
     m++; // 증가를 선언하지 않으면 무한 루프에 빠진다.....블랙홀....
-} while (m<10) ;
+} while (m<9) ;
 
-document.getElementById("do").innerHTML = numss;
+document.getElementById("do").innerHTML = num;
 
 
 //break stop
