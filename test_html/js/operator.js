@@ -18,3 +18,12 @@ let a = 10;
 a **=4;
 document.getElementById("operator5").innerHTML = a;
 
+let i = 5;
+i++;
+let o = i;
+document.getElementById("operator6").innerHTML = o;
+
+let p = 5;
+p--;
+let b = p;
+document.getElementById("operator7").innerHTML = b;
