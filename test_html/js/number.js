@@ -6,17 +6,16 @@ let z= x+y ;
 document.getElementById('small').innerHTML = z;
 
 //nan
+let nan = NaN;
 
-let nan = 100/"후" ; // nan ,10 
+document.getElementById('nan').innerHTML = 
+`${100/ "후후"} + ${100/"10"} + ${typeof nan}`;
 
-// 100/"10" : 10 
+//NaN 10 number
 
-//document.getElementById('nan').innerHTML = typeof nan;/
 
-console.log(typeof nan) ; // 숫자 number 임..
 
-document.getElementById("nan").innerHTML =
-    `값: ${nan}<br>타입: ${typeof nan}`;
+
 
 //infinity
 
