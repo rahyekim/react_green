@@ -74,3 +74,25 @@ export 변수명: import할때 {}중괄호 필요함
 => Promise 객체로 발전 시킴
 */
 
+//0616////////////////////////////////////////////////
+
+// let 가 = 15;
+// 가 += 5;
+// document.getElementById("operator1").innerHTML = 가;
+
+// let 나= 10;
+// 나 -=2; 
+// document.getElementById("operator2").innerHTML = 나;
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    let 가 = 15;
+    가 += 5;
+
+    let 나 = 10;
+    나 -= 2;
+
+    document.getElementById("operator1").innerHTML = 가;
+    document.getElementById("operator2").innerHTML = 나;
+
+});

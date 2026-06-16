@@ -1,6 +1,6 @@
 
 body{
-    color: violet;
+   background:#f5f7fb;
 }
 
 .one{ 
@@ -9,4 +9,26 @@ body{
 
 #two{
     color:brown;
+}
+.row{
+    display: flex;
+    gap:2px;
+    flex-wrap: wrap;
+}
+.col-md-3,
+.col-md-4,
+.col-md-12 {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.col-md-3:hover,
+.col-md-4:hover,
+.col-md-12:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
