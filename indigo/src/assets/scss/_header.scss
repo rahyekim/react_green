@@ -1,0 +1,34 @@
+@use "./variables" as *;
+// 
+
+
+.header {
+    position: relative; 
+    /*자신을 원래 위치를 기준으로 삼고 위치를 조정.
+    자식요소에게 absolute를 적용하기위해 부모요소 설정할때....
+    줄서 있는 상태를 유지하되, 약간 발이나 팔을 뻗어 이동할수있는 상태*/
+    padding: 18px 5%;
+
+    //태블릿일때
+    @media all and (min-width: $bp-tablet) {
+        position: static; 
+        /* 그냥 줄 서있는 상태
+         포지션을 별도로 지정하지 않으면 모든 요소는 static상태
+         위치 조정 속성이 적용되지 않음. 요소를 강제로 이동하거나 겹치게 하지않음*/
+        padding: 28px 52px;
+
+        .logo{
+            float:left; // display:flex, display:grid
+            a{
+                font-size: 56px;
+                color: $primary;
+            }
+        }
+
+        .gnb {
+            display: none;
+        }
+
+    }
+}
+

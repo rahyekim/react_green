@@ -158,7 +158,7 @@ const Home = () => {
                         <li>
                             <a href="">
                                 <img src={blog01} alt="" />
-                                <time datetime="2026-10-30">
+                                <time dateTime="2026-10-30">
                                     OCT 30 , 2026
                                 </time>
                                 <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, repellat?</h3>
@@ -167,7 +167,7 @@ const Home = () => {
                         <li>
                             <a href="">
                                 <img src={blog02} alt="" />
-                                <time datetime="2026-10-30">
+                                <time dateTime="2026-10-30">
                                     OCT 30 , 2026
                                 </time>
                                 <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, repellat?</h3>
@@ -176,7 +176,7 @@ const Home = () => {
                         <li>
                             <a href="">
                                 <img src={blog03} alt="" />
-                                <time datetime="2026-10-30">
+                                <time dateTime="2026-10-30">
                                     OCT 30 , 2026
                                 </time>
                                 <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, repellat?</h3>

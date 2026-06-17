@@ -10,6 +10,61 @@
 </head>
 <body>
     <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-md-3">
+                <h1>e5: 0이 5개 00000 / e-5 </h1>
+                <mark id="e"></mark>
+                <p>
+                    대부분 프로그래밍 언어는 다양한 숫자 유형이 있다. <br>
+                    정수 <br>
+                    byte(8bit), short(16bit), int(32bit), long(64bit) <br>
+                    실수 부동소수점<br>
+                    float(32bit) double(64bit)<br>
+                    but <br>
+                    javascript numbers are always <b>double(64bit floating point)</b><br>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h1>Integer Precision 정수정밀도 구려 반올림해서나옴->big int</h1>
+                <mark id="int"></mark>
+            </div>
+            <div class="col-md-3">
+                <h1>floating plus 부동 소수점 연산 구려</h1>
+                <mark id="float"></mark> <br>
+                곱해주면 good:<mark id="floating"></mark>
+                <p>
+                    JS 소수 = 정확한 값이 아니라 근사값
+                    이유 = 2진 부동소수점 구조 때문
+                    1.표시할 때만 반올림: toFixed(1)는 문자열(string)을 반환 -> Number()
+                    2.처음부터 정수로 계산
+                    
+                    반올림 공식 소수 n자리까지 반올림:
+                    100 곱하기 → 123.456
+                    Math.round() → 123
+                    100 나누기 → 1.23
+                    
+                    소수 1자리 → *10 후 /10
+                    소수 2자리 → *100 후 /100
+                    소수 3자리 → *1000 후 /1000
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h1>으음...</h1>
+                <p>
+                    javascript는 2<sup>53-1</sup>부터 
+                    javascript는 -2<sup>53-1</sup>의 정수만 완전하게 표현합니다.
+                </p>
+                <code id="minmax"></code>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>BigInt</h1>
+                <p> 사용법: n이라는 정수 리터럴을 붙이거나 BigInt("")</p>
+                <mark id="bigint"></mark>
+            </div>
+        </div>    
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-3">
                 <h1>문자열과 숫자를 더할 경우는? <small id="small"></small></h1>
@@ -28,6 +83,7 @@
             <div class="col-md-3">
                 <h1>16진수(Hexadecimal) </h1>
                 <mark>자바스크립트는 0x가 붙으면 16진수로 해석</mark>
+                <mark id="sixteen"></mark>
                 <p>
                 - 2진수(Binary): 컴퓨터의 기본언어
                     컴퓨터 내부 회로는 전류가 흐르느냐(1) 흐르지 않느냐(0)로 동작.=> 1bit: 0or1 딱 하나넣을수있는 제일작은상자한칸
