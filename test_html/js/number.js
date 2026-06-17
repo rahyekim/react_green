@@ -46,7 +46,7 @@ document.getElementById('e').innerHTML = `${qq}<br>${ww}`
 //qq + "<br>" + ww
 
 let fiveDigits = 9999999999999999999999999 ; //15자리
-let sixDigits = 99999999999999999999999999 ; //16자리 -> 반올림됨... => 부정확해져서 big int 등장
+let sixDigits = 99999999999999999999999999 ; //16자리 근사값저장됨=> 부정확해져서 big int 등장
 
 document.getElementById('int').innerHTML = "accurate:" + fiveDigits + "<br> Inacurrate:" + sixDigits ;
 

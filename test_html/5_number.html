@@ -19,26 +19,45 @@
                     대부분 프로그래밍 언어는 다양한 숫자 유형이 있다. <br>
                     정수 <br>
                     byte(8bit), short(16bit), int(32bit), long(64bit) <br>
-                    실수 부동소수점<br>
+                    실수(정수+소수+무리수)<br>
                     float(32bit) double(64bit)<br>
                     but <br>
                     javascript numbers are always <b>double(64bit floating point)</b><br>
+                    🔥JavaScript의 숫자는 전부 “double(64bit 부동소수점)” 하나만 쓴다🔥
+                    이유: 편하게 쓰려고 + 웹 중심 언어라서
+                    타입 신경 안 쓰게 만들고 싶었음
+                    개발 속도 빠르게
+                    브라우저용이라 단순하게 설계
+                <h2>💡부동소수점 (floating point)= 소수점 위치를 고정하지 않고 
+                    2진수로 “근사값”을 저장하는 방식</h2>
+                    
                 </p>
             </div>
             <div class="col-md-3">
-                <h1>Integer Precision 정수정밀도 구려 반올림해서나옴->big int</h1>
+                <h1>Integer Precision 정수정밀도 (큰 숫자 문제)</h1>
+                <h3>정수를 정확하게 표현할 수 있는 한계 범위</h3>
+                <p>
+                    javascript는 2<sup>53-1</sup>부터 
+                    javascript는 -2<sup>53-1</sup>의 정수만 완전하게 표현합니다.
+                    이 범위를 넘으면 정확도 깨짐 
+                    모든 정수를 끝까지 정확하게 저장 못함, 너무 커서 정확하게 표현 못함
+                    -> “근사값 저장” 대충저장ㅋㅋ => 정확한 계산을 원할때 BigInt 사용
+                </p>
+                
                 <mark id="int"></mark>
             </div>
             <div class="col-md-3">
-                <h1>floating plus 부동 소수점 연산 구려</h1>
+                <h1>Floating Precision (작은 숫자 문제 = 소수 (0.1 + 0.2)) </h1>
+                
+                <p>0.1, 0.2를 2진수로 정확히 못 표현함, “가까운 값”으로 저장됨 >근사값</p>
                 <mark id="float"></mark> <br>
                 곱해주면 good:<mark id="floating"></mark>
                 <p>
-                    JS 소수 = 정확한 값이 아니라 근사값
-                    이유 = 2진 부동소수점 구조 때문
-                    1.표시할 때만 반올림: toFixed(1)는 문자열(string)을 반환 -> Number()
-                    2.처음부터 정수로 계산
-                    
+                    2진수 구조 때문에 일부 소수가 정확히 표현되지 않는다=> 소수연산 부정확
+                    1.toFixed()    = 화면 표시용 (문자열)
+                    2. Math.round() = 숫자 반올림용
+                    3. 정수 계산 = 실무에서 가장 안전한 방법 ex) 10.99달러-> 1099달러로 저장.
+
                     반올림 공식 소수 n자리까지 반올림:
                     100 곱하기 → 123.456
                     Math.round() → 123
@@ -51,15 +70,14 @@
             </div>
             <div class="col-md-3">
                 <h1>으음...</h1>
-                <p>
-                    javascript는 2<sup>53-1</sup>부터 
-                    javascript는 -2<sup>53-1</sup>의 정수만 완전하게 표현합니다.
-                </p>
+                
                 <code id="minmax"></code>
         <div class="row">
             <div class="col-md-12">
-                <h1>BigInt</h1>
+                <h2>시대가 바뀌고 금융/ID 블록체인 빅데이터등 정밀한 큰 숫자가 필요해짐</h2>
+                <h1>BigInt: 정수 전용 무한 정밀도 타입</h1>
                 <p> 사용법: n이라는 정수 리터럴을 붙이거나 BigInt("")</p>
+               
                 <mark id="bigint"></mark>
             </div>
         </div>    
