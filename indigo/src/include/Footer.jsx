@@ -11,10 +11,12 @@ const Footer = () => {
             width="100%"
             height={450}>
 
+            
+            </iframe>
+
             <p className="copyrignt">
                 INDIGO
             </p>
-            </iframe>
         </footer>
         
         </>

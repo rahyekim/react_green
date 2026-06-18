@@ -69,7 +69,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <hr className='m-divider'/>
+            <hr className='divider'/>
 
             <section className="work-section cfixed">
                 <h2 className="sec-tit">WORKS</h2>
@@ -153,7 +153,7 @@ const Home = () => {
 
             <section className="blog-section">
                 <div className="container">
-                    <h2 className="sec-title">BLOG</h2>
+                    <h2 className="sec-tit">BLOG</h2>
                     <ul className="blog-list">
                         <li>
                             <a href="">
@@ -188,7 +188,7 @@ const Home = () => {
 
             <section className="contact-section">
                 <div className="container">
-                    <h2 className="sec-title">CONTACT</h2>
+                    <h2 className="sec-tit">CONTACT</h2>
                     <div className="form-box">
                         <form action="">
                             <fieldset className="cfixed">

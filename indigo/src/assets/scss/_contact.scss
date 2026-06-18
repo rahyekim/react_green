@@ -1,0 +1,60 @@
+@use './variables' as *;
+
+.contact-section{
+
+    margin-top: 109px;
+
+    @media all and (min-width: $bp-tablet){
+
+        margin-top: 176px;
+    }
+
+    .sec-tit{
+
+        margin-bottom: 47px;
+        text-align: center;
+    
+        @media all and (min-width: $bp-tablet){
+            margin-bottom: 76px;
+        }
+        @media all and (min-width: $bp-pc){
+            float: left;
+            margin-bottom: 0;
+        }
+
+    }
+
+    .form-box{
+
+        @media all and (min-width: $bp-pc){
+            float: right;
+            width: 74.5583038869258%;
+        }
+
+        .form, .textarea{
+
+            @media all and (min-width: $bp-tablet){
+                float: right;
+                width: 48.6979166666666%;
+            }
+            @media all and (min-width: $bp-pc){
+                float: right;
+                width: 48.6979166666666%;
+            }
+
+        }
+
+        .form{
+            input{
+
+            }
+        }
+
+        .textarea{
+
+        }
+        .send-btn{
+
+        }
+    }
+}
