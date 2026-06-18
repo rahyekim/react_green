@@ -27,7 +27,7 @@ user2.attack()
 class Warrior extends Character{
 
     constructor(name, age ,shieldSize){
-        //⭐ 매우 중요: 부모(Character)의 생성자를 먼저 호출해서 이름과 직업 나이 세팅
+        //⭐⭐ 매우 중요: 부모(Character)의 생성자를 먼저 호출해서 이름과 직업 나이 세팅
         super(name, "전사", age);  // 부모순서(name -> job -> age) 맞춰서 값 전달
         this.shieldSize = shieldSize; // 전사만의 고유 데이터 세팅
     }
@@ -52,18 +52,7 @@ warrior1.attack();
 warrior1.shieldDefend();
 console.log(warrior1.shieldSize);
 
-
-
-
-
-
-
-
-
-
-
-
-
+///////////////////////////////////////////////
 
 class Car {
     

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set 집합</title>
+</head>
+<body>
+    <h1>🔹 new Set() 🔹</h1>
+    <pre>
+    python에 list tuple dictionary set 있다
+    ㄴ 자바스크립트에 array가 있는데 set 개념이 생김
+    📍 new Set() : 빈집합을 생성하고 이를 사용하여 add()값을 추가
+    ⭐ 중복 ❌을 허용하지 않는다. 고유한
+    ⭐ Set은 배열❌ 아님 -> length ❌
+    ⭐ Set의 길이는 ✔️size -> ✔️ length는 배열 전용 개념
+    ⭐ ✔️순서 있음 but  index❌ 없음
+    </pre>
+    <p id="set"></p>
+
+    <h1>Method</h1>
+    <pre>
+    🔸 has(): 지정된 값에 존재하는지...
+    🔸 forEach(): 각 요소에 대해서 호출...
+    🔸 values(): 값들
+    🔸 keys() : 세트와 맵을 호환하기 위함
+    🔸 entries() : [값, 값]
+    🔸 union(): 두 집합의 합집합
+    🔸 difference(): 두 집합의 차이
+    🔸 symemetricDifference(): 두 집합의 대칭차이
+    🔸 intersection(): 두 집합의 교집합
+    🔸 isDisjoinFrom(): 공통되는 요소가 없으면 true, 있으면 false
+    🔸 isSubsetOf(): 이 집합의 모든 요소가 인자 집합의 요소와 동일한지 비교
+    🔸 isSupersetOf(): true인자 
+
+    for / forEach / for...of 차이 (진짜 실무 기준)”
+    “Set에서 for...of가 왜 중요한지
+    for...of는 배열, Set, 문자열처럼 “순서 있는 데이터”를 하나씩 꺼낼 때 쓰는 반복문
+    for...in 👉 index(키)
+    for...of 👉 값 자체
+    
+
+    <pre> 
+        Array (배열) : “순서 + 목록 + UI 데이터”
+        Array = “UI용 기본 데이터 구조”
+        화면에 보여줄 데이터
+        순서가 중요한 경우 const steps = ["이용약관", "정보입력", "완료"];
+        반복 작업: users.map(u => u), users.forEach(u => console.log(u))
+        정렬 / 필터 : arr.sort(), arr.filter()
+
+        Set — “중복 제거 + 존재 체크”
+        “중복 없는 데이터 관리용”
+        ✔ 1. 중복 제거 (가장 중요)
+        const arr = [1,1,2,3,3];
+        const unique = [...new Set(arr)];
+        2. 로또 / 랜덤 / 번호 생성 
+        3. 3. “이미 있는지 체크” (빠름)
+        const visited = new Set();
+
+        visited.add("A");
+
+        visited.has("A"); // true
+        4. 4. 좋아요 / 찜 / 방문 기록=> 중복 좋아요 방지
+    </pre>
+
+    <script src="js/set.js"></script>
+    </pre>
+</body>
+</html>
