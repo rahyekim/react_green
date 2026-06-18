@@ -3,9 +3,9 @@
 
 const letters = new Set(["b","a","n","a","n","a"])
 
-console.log(letters)
+console.log(letters) //Set(3) 
 
-// document.getElementById('set').innerHTML = letters.size;
+document.getElementById('set').innerHTML = letters.size;
 
 //비어진 값에 새로추가
 
@@ -32,5 +32,13 @@ for( const letter of Null) {
     txt2 += letter;
 }
 
-document.getElementById('set').innerHTML = txt1 + txt2
+// document.getElementById('set').innerHTML = txt1 + txt2
+
+const mySet = new Set(["사과", "바나나", "딸기"]);
+
+mySet.forEach((value)=> {
+    console.log(value);
+})
+
+
 
