@@ -31,12 +31,14 @@
 .gnb {
         // display: none; // 모바일에서...보이지 않게...->
         // //스크립트(jquery)로 컨트롤하기위해
-        // position: absolute ; // 절대적인 상태로 포지션을 가짐 왼쪽 위로 튀어나옴
+         position: absolute ; // 절대적인 상태로 포지션을 가짐 왼쪽 위로 튀어나옴
         // top: 100%;  // 아예 안보이게 치움...? 팝업창 만들때 두둥 자주 등장
         // left:0;  //왼쪽에바짝
         // width:100%;
         // background-color: $primary;
-
+        &.active{
+            display: block;
+        }
         padding: 18px 5%;
         display: flex; // 가로 한줄 합치기 
         justify-content: space-between; // 왼쪽 오른쪽 나란히 맞추기 

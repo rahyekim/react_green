@@ -22,6 +22,7 @@ function generateLotto(){
     //     alert("1~45 사이의 숫자만 입력하세요.");
     //     return;
     // }
+    //  isNaN() 보다 !num.isInteger()추천 소수도 숫자니까...3.5..
 
     for ( let i=0 ; i < counts ; i++) {  //오천원 5번
 
@@ -46,6 +47,11 @@ function generateLotto(){
 
 
 /**
+ * && = 통과 조건
+   || = 탈락 조건
+
+
+//
  *  입력 검증할 때 (true/false)
  * 
 arr.some(...)   // 하나라도 만족하면 true
@@ -86,5 +92,4 @@ num => {
     return num * 2; 
 }
 */
-
 
