@@ -1,0 +1,42 @@
+
+.float, .flex , .grid{
+    
+    width: 100%;
+   
+}
+
+.one, .two , .three {
+    width: 1000px;
+    height: 500px;
+}
+
+.one{
+    background-color: rgb(95, 83, 93);
+    color: white;
+}
+.two{
+    background-color: rgb(43, 34, 51);
+    color:white;
+}
+.three{
+    background-color: rgb(73, 40, 69);
+    color: white;
+}
+
+.flex{
+    display: flex;
+}
+
+.float {
+    div{
+        float:left;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   
+}
+
+

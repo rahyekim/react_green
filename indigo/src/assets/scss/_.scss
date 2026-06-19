@@ -48,7 +48,6 @@ button{
 
 input, textarea{
     border: none; //박스일부공간차지
-    outline: none; //박스위 덧그리는 표시용선 (공간영향없음)
     font-family: inherit;
 }
 
@@ -56,4 +55,15 @@ input, textarea{
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+///
+/// 
+img, picture, video, canvas, svg { //svg:햄버거아이콘 화살표 등등..
+  display: block; // inline요소였어서 아래에 미세한 공백 생김 방지
+  max-width: 100%; //👍거의 필수급 이미지가 부모보다 커지는 걸 방지
+}
+
+input, button, textarea, select { //👉 브라우저마다 기본 폰트가 다름
+  font: inherit; 
 }
