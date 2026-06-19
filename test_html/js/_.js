@@ -50,6 +50,11 @@ function generateLotto(){
  * && = 통과 조건
    || = 탈락 조건
 
+?. = 💥 안 터지게 보호  null.name undefined.name 💥터짐-> 
+        ?. 써서 에러막고 undefined 반환 => user?.name || "손님"(기본값)
+&& = 🎯 조건 맞으면 실행   isAdmin && showAdminMenu()
+|| = 🚨 하나라도 걸리면 반응 
+
 
 //
  *  입력 검증할 때 (true/false)
