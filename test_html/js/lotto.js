@@ -41,7 +41,8 @@ function generateLotto(){
 /*
 
 parseInt는 "공백이나 부호 떼고, 처음 마주치는 숫자부터 문자 직전까지만" 
-쏙 뽑아내는 친구 
+쏙 뽑아내는 친구  // 문자열에서 정수만 뽑고 싶을때
+
 그래서 첫 대가리(?)에 숫자가 안 보이면 바로 포기해 버립니다!-> NaN
 parseInt("2026년") ➡️ 2026
 parseInt("No.1") ➡️ NaN
@@ -55,7 +56,7 @@ parseInt("   42") ➡️ 42
 /*
 💡HTML 태그의 속성(Attribute) 값들은 
 전부 💡문자열 데이터 타입
-①: 오늘 배운 parseInt() 쓰기
-②: 더 간단하게 parseInt() 쓰기
+①: 오늘 배운 parseInt() 쓰기 
+②: 더 간단하게 Number() 쓰기
 
 */
