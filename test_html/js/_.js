@@ -25,7 +25,7 @@ function generateLotto(){
 
     for ( let i=0 ; i < counts ; i++) {  //오천원 5번
 
-        let halfLotto = new Set(fixedNums); //중복되지않는 주머니
+        const halfLotto = new Set(fixedNums); //중복되지않는 주머니
 
 
         while( halfLotto.size < 6){  //6개가될때까지..
@@ -70,7 +70,8 @@ fixedNums 안에
 초보 때는 for문으로 다 하려고 하는데, 한 줄로 표현할 수 있어서 가독성
  */
 
-/* 중괄호 {} 쓰면 직접 return 해야 
+/* 
+중괄호 {} 쓰면 직접 return 해야 
 
 중괄호 {} 없으면 자동 return
 
