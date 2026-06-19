@@ -20,11 +20,22 @@ const Geo = ()=>{
             setError('이브라우저는 위치 정보를 지원하지않습니다.')
             return;
         }
-
-        
-        
-        
-    }
+    //1.위치정보요청
+    navigator.geolocation.getCurrentPosition(
+        //성공시 브라우저가 위치를 찾으면 이 코드가 실행
+        (position)=>{
+            setLocation({
+                lat:position.coords.latitude,
+                lon:position.coords.longitude,
+            });
+            setError(`위치 가져올수없다: ${error.message}`) //////??????
+        },
+        (error)=>{
+         setError(`위치 가져올수없다: ${error.message}`)
+        }
+       
+    )        
+}
     return(
         <>
         <Container fluid>
@@ -32,7 +43,21 @@ const Geo = ()=>{
                 <Col sm={12} lg={12}>
                 
                 <h1 className="mt-5 mb-2">위치기반실습</h1>
-                <Button variant='primary'>현재 위치 가져오기</Button>
+                <Button 
+                onClick={getLocation}
+                variant='primary'>현재 위치 가져오기</Button>
+                {/*에러 출력 부분 */}
+                {error && 
+                <Alert variant='danger'className='mt-3'>
+                    {error}</Alert>}
+                {/*정상 */}
+
+                {location.lat && (
+                    <div className="mt-3">
+                        <p><strong>위도:</strong>{location.lat}</p>
+                        <p><strong>경도:</strong>{location.lon}</p>
+                    </div>
+                )}
                 
                 </Col>
             </Row>
@@ -43,3 +68,6 @@ const Geo = ()=>{
 }
 
 export default Geo;
+
+
+

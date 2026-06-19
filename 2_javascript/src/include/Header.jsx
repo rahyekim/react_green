@@ -26,7 +26,7 @@ const Header = ( ) => {
                     title="es6" 
                     id="navbarScrollingDropdown">
                     <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
-                    <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
+                    <NavDropdown.Item href="/async">비동기</NavDropdown.Item>
                     <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
                     <NavDropdown.Divider/>
                     <NavDropdown.Item href="/geo">위치기반</NavDropdown.Item>

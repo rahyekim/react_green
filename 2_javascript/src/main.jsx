@@ -11,6 +11,7 @@ import Es6 from './sub/Es6'
 //기본 부트스트랩 cdn
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Geo from './sub/Geo'
+import Async from './sub/Async'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/flex' element={<Flex/>}></Route>
         <Route path='/es6' element={<Es6/>}></Route>
         <Route path='/geo' element={<Geo/>}></Route>
+        <Route path='/async' element={<Async/>}></Route>
       </Routes>
 
 
