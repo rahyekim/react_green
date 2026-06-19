@@ -43,3 +43,47 @@ function generateLotto(){
         }
                 resultDiv.innerHTML = html;
 }
+
+
+/**
+ *  입력 검증할 때 (true/false)
+ * 
+arr.some(...)   // 하나라도 만족하면 true
+arr.every(...)  // 전부 만족해야 true
+
+------------------------------------------
+
+arr.filter(...) // 만족하는 것만 새 배열 => 조건에 맞는거 전부반환(배열)
+arr.find(...)   // 처음 만족하는 값 하나만 반환 
+arr.map(...)    // 변환된 새 배열
+ 
+
+fixedNums 안에
+
+정수가 아니거나
+1보다 작거나
+45보다 큰 값이
+
+하나라도 있냐? 검사 => 배열 안에 조건을 만족하는 요소가 하나라도 있으면 true
+ * 
+
+초보 때는 for문으로 다 하려고 하는데, 한 줄로 표현할 수 있어서 가독성
+ */
+
+/* 중괄호 {} 쓰면 직접 return 해야 
+
+중괄호 {} 없으면 자동 return
+
+num => num * 2 ➡️ 자동 return //계산 한 줄이면 자동 return쓰는게 낫다
+
+num => ({
+    value: num 
+}) 
+    ➡️ 객체를 바로 반환하려면 괄호로 감싸야
+
+num => {
+    return num * 2; 
+}
+*/
+
+
