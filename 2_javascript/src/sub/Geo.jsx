@@ -1,0 +1,45 @@
+import React, {useState} from 'react';
+import{ Container, Row, Col , Button, Alert} 
+from 'react-bootstrap';
+
+const Geo = ()=>{
+    
+    //상태관리
+    const [location, setLocation] = useState({lat:null, lon:null});
+    /*
+    {lat:null, lon:null} 
+    현재 위도 경도를 담아두는 변수 처음에 값이 없어서 null로 시작
+    setLocation 은 location 업데이트할때 쓰는 명령어
+    error 위치를 가져오다가 문제가 생기면 그내용을 담을 변수
+     */
+    const [error, setError] = useState(null);
+    const getLocation = ()=>{
+        //1.브라우저가 위치 정보를 지원하는지 확인!!
+        if(!navigator.geolocation){
+         //브라우저가 내장하고있는 geolocation(위치탐색)기능이 없다면
+            setError('이브라우저는 위치 정보를 지원하지않습니다.')
+            return;
+        }
+
+        
+        
+        
+    }
+    return(
+        <>
+        <Container fluid>
+            <Row>
+                <Col sm={12} lg={12}>
+                
+                <h1 className="mt-5 mb-2">위치기반실습</h1>
+                <Button variant='primary'>현재 위치 가져오기</Button>
+                
+                </Col>
+            </Row>
+        </Container>
+        
+        </>
+    )
+}
+
+export default Geo;
