@@ -56,12 +56,13 @@ const Async = () => {
                     </Alert>}
                 {weather && (
                     <Card className="mt-3">
+                        <Card.Body>
                         <Card.Title>{weather.city}</Card.Title>
                         <Card.Text>
                             온도:{weather.temp}
                             상태:{weather.desc}
                         </Card.Text>
-
+                        </Card.Body>
                     </Card>
                 )}
                 </Col>
