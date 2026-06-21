@@ -21,7 +21,7 @@ const Geo = ()=>{
             return;
         }
     //1.위치정보요청
-    navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.getCurrentPosition( /*(성공함수, 실패함수) */
         //성공시 브라우저가 위치를 찾으면 이 코드가 실행
         (position)=>{
             setLocation({
