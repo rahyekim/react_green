@@ -28,9 +28,10 @@ const Geo = ()=>{
                 lat:position.coords.latitude,
                 lon:position.coords.longitude,
             });
-            setError(`위치 가져올수없다: ${error.message}`) //////??????
+            setError(null) ///에러가 있었다면 지워줌
         },
-        (error)=>{
+    //실패시나 사용자가 위치 허용을 거부하거나 오류가 나면 실행
+    (error)=>{ 
          setError(`위치 가져올수없다: ${error.message}`)
         }
        
