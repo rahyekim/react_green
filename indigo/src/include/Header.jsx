@@ -1,16 +1,14 @@
 /**
- * 
- 
     리액트 심장
     useState 는 컴포넌트가 자신만의 기억력(상태)를 갖게 해주는 도구
     리액트는 기본적으로 한번 화면을 그리고 나면 변수를 바꿔도 화면이 새로 안고쳐짐
- * 
+ 
  *  이 값이 바뀌면 화면을 다시 그려줘 
  *  라고 특별히 요청하는 도구가 훅...
  * 
  */
 
-import {useState} from 'react';  //상태관리 후크선언
+import {useState} from 'react';  //상태관리  훅 선언 불러옴
 
 
 
@@ -34,7 +32,6 @@ const Header = ()=> {
             <h1 className="logo">
                 <a href="/"> indigo </a>
             </h1>
-
             <nav>
                 <ul className={`gnb ${isOpen ? 'active' : ''}`}> 
                    <li><a href="/">HOME</a></li>
