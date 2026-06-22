@@ -18,18 +18,31 @@ const Fx = () => {
         const saved = localStorage.getItem("count")
         return saved !==null ? Number(saved) : 0 ;  // Number(saved) || 0
 
+        // //⭐ 2. 자동 저장 카메라 설치 (useEffect)
+        // useEffect(()=>{
+        //     localStorage.setItem("count", count.toString())
+        // }, [count])
+
+        // const handleIncrement = () => setCount(prev=> prev+1)
+        
+
+        // const handleDecline = ()=> setCount(prev=> prev-1);
+
+        // const reset = ()=> setCount(0)
+        
         //localstorage: 브라우저 저장소 에서 count키를 가진 데이터를 가져온다
         
         /*
         count는 현재값을 저장하는 변수
-        setCount 그 값을 변경할 함수
+        setCount 그 값을 변경할때 사용하는 함수
         📌useState(()=>{...}) 컴포넌트가 처음 렌더링 될 때 딱 한번 실행하는 초기화 로직
 
         (모든개발은 똑같다 ..java..getter 세팅하는것 setter)
         */
     });
 
-    /* 2.저장함수 count의 값을 localstorage 문자열 형태로 저장 */
+    /* 2.저장함수 count의 값을 localstorage 문자열 형태로 저장 (count라는 칸에다가)
+    브라우저 보관함이 약간 멍청해서 '글자(문자열)' 형태로만 물건을 맡아줍니다*/
 
     const saveCount = () => {
         localStorage.setItem("count", count.toString())

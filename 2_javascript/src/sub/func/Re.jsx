@@ -27,9 +27,9 @@ const Re = ()=>{
             <Row>
                 <Col>
                 <Form.Control
-                type="number"
-                value={num}
-                onChange={(e)=> setNum(Number(e.target.value))}/>
+                type="number" //유저가 오직 숫자만 타이핑할 수 있게
+                value={num}  //브라우저는 무조건 문자열("5", "10") 형태로 우리에게줌
+                onChange={(e)=> setNum(Number(e.target.value))}/> 
 
                 {/*🚨사용자가 입력요소 input,textarea, select 등이
                 상호작용하여 값이 변경될때마다 실행되는 이벤트= onChange🚨

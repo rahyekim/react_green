@@ -3,7 +3,7 @@ import { Container, Col, Row, Button } from "react-bootstrap";
 
 /* */
 /* 1. 데이터구조 (재귀적 데이터) */ 
-                {/*2.????*/}
+              
 
 const categoryData = [
     {
@@ -45,7 +45,9 @@ const CategoryItem = ({item})=> {
                     </div>
                 </div>
                 {/*3.재귀호출 하위항목이 있다면 자기 자신을 다시 렌더링
-                재귀 호출: 하위 항목이 있고, 열려있다면 자기 자신을 다시 렌더링 */}
+                재귀 호출: 하위 항목이 있고, 열려있다면 자기 자신을 다시 렌더링   
+                
+                */}
                  
                 {isOpen && item.children && (
                     <div className="">

@@ -61,7 +61,7 @@ const Async = () => {
                     </Alert>}
                 
                 {/* ⭐ 2. 로딩 중일 때 날씨 카드 자리에서 빙글빙글 돌리기 (여기가 명당!) */}
-                {loadding && <div className="spinner mt-3 text-center">
+                { loading && <div className="spinner mt-3 text-center">
                     🔄로딩중....
                     </div>}
 

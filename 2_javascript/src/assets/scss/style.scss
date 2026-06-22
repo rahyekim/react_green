@@ -63,6 +63,7 @@
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            //⭐ 여기에 감시카메라를 달아두어야 들어올 때, 나갈 때 둘 다 부드럽습니다!
             transition: all 0.3s ease-in-out; //애니메이션 ease-in끝이 빠름 ease-out시작이 빠름
                     //천천히 시작 → 중간 빠름 → 다시 천천히 끝 비슷한 ease(기본값)
             &:hover{
@@ -176,6 +177,7 @@ body{
         }
         .grid-content{
             grid-column: col-start 3 / span 8;
+            grid-row: 2/4;
         }
 
 
@@ -213,9 +215,6 @@ body{
     //시작이 붙은 이름표부터 오른쪽으로 12칸
  }
 
-
-.grid-header{}
-
 .grid-nav{
     ul{
         list-style: none;
@@ -223,10 +222,6 @@ body{
     }
 }
 
-.grid-content{}
-
-.sidebar{}
-.grid-footer{}
 
 
 //grid2
