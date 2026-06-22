@@ -44,8 +44,12 @@ const Header = ( ) => {
                     id="navbarScrollingDropdown">
                     <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
                     <NavDropdown.Item href="/async">비동기</NavDropdown.Item>
-                    <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
-                    <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
+                    <NavDropdown.Item href="/fx">함수</NavDropdown.Item>
+                    <NavDropdown.Item href="/re">재귀함수</NavDropdown.Item>
+                    <NavDropdown.Item href="/cate">재귀함수 실무</NavDropdown.Item>
+                    <NavDropdown.Item href="/date">date</NavDropdown.Item>
+                    <NavDropdown.Item href="/temp">temporal</NavDropdown.Item>
+                    <NavDropdown.Item href="/datevstemp">datevstemporal</NavDropdown.Item>
                     <NavDropdown.Divider/>
                     <NavDropdown.Item href="/geo">위치기반</NavDropdown.Item>
 

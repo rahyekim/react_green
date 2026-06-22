@@ -7,11 +7,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Header from "./include/Header"
 import Home from "./Home"
+//자바스크립트학습
 import Es6 from './sub/Es6'
-
 import Geo from './sub/Geo'
 import Async from './sub/Async'
 
+import Fx from './sub/func/Fx';
+import Re from './sub/func/Re';
+import Cate from './sub/func/Cate';
+import MyDate from './sub/date/MyDate';
+import Temporal from './sub/date/temporal';
+import DateVsTemp from './sub/date/DateVsTemp';
+
+//css학습
 import Flex from "./sub/Flex"
 import Grid from './sub/Grid'
 import Layout from './sub/Layout'
@@ -30,11 +38,20 @@ function App() {
         <Route path='/es6' element={<Es6/>}></Route>
         <Route path='/geo' element={<Geo/>}></Route>
         <Route path='/async' element={<Async/>}></Route>
+        <Route path='/fx' element= {<Fx/>}></Route>
+        <Route path='/re' element= {<Re/>}></Route>
+        <Route path='/cate' element= {<Cate/>}></Route>
+
+        <Route path='/date' element= {<MyDate/>}></Route>
+        <Route path='/temp' element= {<Temporal/>}></Route>
+        <Route path='/datevstemp' element= {<DateVsTemp/>}></Route>
+
 
         <Route path='/flex' element={<Flex/>}></Route>
         <Route path='/flexweb' element={<FlexWeb/>}></Route>
         <Route path='/grid' element={<Grid/>}></Route>
         <Route path='/layout' element={<Layout/>}></Route>
+
       </Routes>
 
 
