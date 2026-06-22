@@ -21,16 +21,17 @@ const Geo = ()=>{
             return;
         }
     //1.위치정보요청
-    navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.getCurrentPosition( /*(성공함수, 실패함수) */
         //성공시 브라우저가 위치를 찾으면 이 코드가 실행
         (position)=>{
             setLocation({
                 lat:position.coords.latitude,
                 lon:position.coords.longitude,
             });
-            setError(`위치 가져올수없다: ${error.message}`) //////??????
+            setError(null) ///에러가 있었다면 지워줌
         },
-        (error)=>{
+    //실패시나 사용자가 위치 허용을 거부하거나 오류가 나면 실행
+    (error)=>{ 
          setError(`위치 가져올수없다: ${error.message}`)
         }
        

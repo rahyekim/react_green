@@ -1,4 +1,4 @@
-
+//lotto  ver2
 
 
 function generateLotto(){
@@ -18,11 +18,16 @@ function generateLotto(){
         return;
     }
 
+    if( fixedNums.some(num => !Number.isInteger(num) || num < 1|| num > 45)){
+        alert ( "1~45 숫자를 입력하세요");
+        return; // 👈 이 return 꼭필요 함수종료시켜야지,,
+    }
+
     // if (fixedNums.some(num => isNaN(num) || num < 1 || num > 45)) {
     //     alert("1~45 사이의 숫자만 입력하세요.");
     //     return;
     // }
-    //  isNaN() 보다 !num.isInteger()추천 소수도 숫자니까...3.5..
+    //  isNaN() 보다 !Number.isInteger(값)추천 소수도 숫자니까...3.5..
 
     for ( let i=0 ; i < counts ; i++) {  //오천원 5번
 
@@ -47,8 +52,8 @@ function generateLotto(){
 
 
 /**
- * && = 통과 조건
-   || = 탈락 조건
+ ✨ && = 통과 조건
+    || = 탈락 조건 ✨
 
 ?. = 💥 안 터지게 보호  null.name undefined.name 💥터짐-> 
         ?. 써서 에러막고 undefined 반환 => user?.name || "손님"(기본값)
@@ -57,9 +62,9 @@ function generateLotto(){
 
 
 //
- *  입력 검증할 때 (true/false)
+ *  ✨입력 검증할 때 (true/false)✨
  * 
-arr.some(...)   // 하나라도 만족하면 true
+arr.some(...)   // 하나라도 만족하면 true // some안에 콜백함수(화살표함수)
 arr.every(...)  // 전부 만족해야 true
 
 ------------------------------------------
@@ -78,7 +83,7 @@ fixedNums 안에
 하나라도 있냐? 검사 => 배열 안에 조건을 만족하는 요소가 하나라도 있으면 true
  * 
 
-초보 때는 for문으로 다 하려고 하는데, 한 줄로 표현할 수 있어서 가독성
+초보 때는 for문으로 다 하려고 하는데, some 한 줄로 표현할 수 있어서 가독성 
  */
 
 /* 

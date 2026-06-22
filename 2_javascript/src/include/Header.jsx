@@ -30,15 +30,21 @@ const Header = ( ) => {
 
                 
                 <Nav.Link href="">JSX</Nav.Link>
-                <Nav.Link href="">Text2</Nav.Link>
-                <Nav.Link href="">Text2</Nav.Link>
-                <Nav.Link href="">Text2</Nav.Link>
+                <Nav.Link href="">Components</Nav.Link>
+                <Nav.Link href="">Class</Nav.Link>
+                <Nav.Link href="">Props</Nav.Link>
+                <Nav.Link href="">Event</Nav.Link>
+                <Nav.Link href="">Forms</Nav.Link>
+                <Nav.Link href="">Router</Nav.Link>
+                <Nav.Link href="">HOC</Nav.Link>
+                <Nav.Link href="">HOOKS</Nav.Link>
 
                 <NavDropdown 
                     title="es6" 
                     id="navbarScrollingDropdown">
                     <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
                     <NavDropdown.Item href="/async">비동기</NavDropdown.Item>
+                    <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
                     <NavDropdown.Item href="/es6">es6소개</NavDropdown.Item>
                     <NavDropdown.Divider/>
                     <NavDropdown.Item href="/geo">위치기반</NavDropdown.Item>
@@ -49,8 +55,8 @@ const Header = ( ) => {
                <Form className="d-flex">
                 <Form.Control 
                     type="search"
-                    placeholder="search"
-                    aria-label="search"
+                    placeholder="Search"
+                    aria-label="Search"
                     className="me-2"/>
                     <Button variant="outline-success">Search</Button>
                </Form>

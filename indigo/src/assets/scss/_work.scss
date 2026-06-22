@@ -25,96 +25,107 @@
             text-align: left;
         }
     }
-}
 
-
-
-.work-list{
-    li{
-        width:100%;
-
-        @media all and (min-width: $bp-tablet){
-            float: left; //block형태 되어있는 것을 왼쪽으로 정렬
-            width: 50%;
-    }
-        @media all and (min-width: $bp-pc){
-            width: 25%;
+    .work-list{
+        li{
+            width:100%;
+    
+            @media all and (min-width: $bp-tablet){
+                float: left; //block형태 되어있는 것을 왼쪽으로 정렬
+                width: 50%;
         }
+            @media all and (min-width: $bp-pc){
+                width: 25%;
+            }
+    
+        
+        
+            a{
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+    
+            //링크 위에 “가상 레이어(덮개)” 하나 씌우는 거
+            //::before: 원래 없는 요소를 하나 만들어서 붙여두는 것 
+                &::before{ /* 3. 가상 배경막 */
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 10; //클수록 앞으로..  9999:팝업/모달
+                    width: 100%;
+                    height: 100%;
+                    background-color: $primary;
+        
+                    content: "";
+                    opacity: 0; //투명도 0
+                    transition: all 0.3s ease; // 진짜 움직임처럼 보이는 착시효과
+                    //연출 , 변화가 생기면 0.3초동안 부드럽게 애니메이션으로 보여줘
+                    //transition transform같이써야 정석
+                }
+                /* 평소 숨어있다가 마우스 올리면 나타날글자*/
+                .info{ 
+                    position: absolute; // 파괴됨 사라졌다가 hover하면 보임...
+                    top:0;
+                    left:23px;
+                    z-index: 20;
+                    opacity:0;
+                    transition: all 0.3s ease ;
+            
+                    h3{
+                        margin-bottom: 8px;
+                        font-size: 23px;
+                        color: #fff;
+                        font-weight: normal;
+            
+                    }
+                    span{
+                        font-size: 11px;
+                        color: #fff;
+                        font-weight: 300;
+                    }
+            
+                }
 
+                .img{
+                    display:block;
+                    width:100%;
+                    max-width: 100%;
+                    height: auto;
+            
+                }
+            /*마우스를 올렸을 때의 변화 (자식인 before와 info를 통제)*/
+            //a에 마우스를 올렸을 때만, before(장식,배경,가짜요소만들기)변경
+                &:hover{
+                    &::before{ 
+                        opacity: 0.80;
+                    }
+                    .info{
+                        transform: translateY(23px);
+                        opacity: 1; // 완전보임  0.5:반투명
+                        @media all and (min-width: $bp-tablet){
+                            transform: translateY(37px);
+                        }               
+                    
+                    }
+               
+            }
+    
+        }
+       
+       
     }
     
-    a{
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-        //링크 위에 “가상 레이어(덮개)” 하나 씌우는 거
-        //::before: 원래 없는 요소를 하나 만들어서 붙여두는 것 
-        &::before{
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10; //클수록 앞으로..  9999:팝업/모달
-            width: 100%;
-            height: 100%;
-            background-color: $primary;
-
-            content: "";
-            opacity: 0; //투명도 0
-            transition: all 0.3s ease; // 진짜 움직임처럼 보이는 착시효과
-            //연출 , 변화가 생기면 0.3초동안 부드럽게 애니메이션으로 보여줘
-            //transition transform같이써야 정석
-        }
-        
-        //a에 마우스를 올렸을 때만, before(장식,배경,가짜요소만들기)변경
-        &:hover{
-            &::before{ 
-                opacity: 0.80;
-            }
-            .info{
-                transform: translateY(23px);
-                opacity: 1; // 완전보임  0.5:반투명
-                @media all and (min-width: $bp-tablet){
-                    transform: translateY(37px);
-                }               
-            
-            }
-           
-        }
-
-    }
-    .info{
-        position: absolute; // 파괴됨 사라졌다가 hover하면 보임...
-        top:0;
-        left:23px;
-        z-index: 20;
-        opacity:0;
-        transition: all 0.3s ease ;
-
-        h3{
-            margin-bottom: 8px;
-            font-size: 23px;
-            color: #fff;
-            font-weight: normal;
-
-        }
-        span{
-            font-size: 11px;
-            color: #fff;
-            font-weight: 300;
-        }
-
-    }
-    .img{
-        display:block;
-        width:100%;
-        max-width: 100%;
-        height: auto;
-
-    }
+} 
+    
+    
 }
+
+
+
+
+
 
 /*
 
