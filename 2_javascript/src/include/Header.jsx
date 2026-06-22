@@ -17,6 +17,18 @@ const Header = ( ) => {
                <Nav className="me-auto my-2 my-lg-0"
                navbarScroll
                >
+                 <NavDropdown 
+                    title="UI/UX" 
+                    id="navbarScrollingDropdown">
+                    <NavDropdown.Item href="/flex">flex</NavDropdown.Item>
+                    <NavDropdown.Item href="/flexweb">flexweb</NavDropdown.Item>
+                    <NavDropdown.Item href="/grid">grid</NavDropdown.Item>
+                    <NavDropdown.Item href="/layout">layout</NavDropdown.Item>
+                    <NavDropdown.Divider/>
+
+                </NavDropdown>
+
+                
                 <Nav.Link href="">JSX</Nav.Link>
                 <Nav.Link href="">Text2</Nav.Link>
                 <Nav.Link href="">Text2</Nav.Link>

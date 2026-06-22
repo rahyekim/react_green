@@ -7,7 +7,7 @@ const Async = () => {
 
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(false);
     
     //실행 함수
     const fetchWeather = async ()=> {
@@ -32,6 +32,7 @@ const Async = () => {
 
         }catch(e){
             setError('네트워크 오류발생!')
+            // setError(e.message || '네트워크오류')
 
         }finally{
             setLoading(false);
@@ -73,3 +74,44 @@ const Async = () => {
 }
 
 export default Async;
+
+////////////////
+/*
+
+
+response.ok → "성공했냐 실패했냐"만 확인 // 상태 코드가 200~299인지 확인하는 boolean 값
+response.status → "404인지 500인지" 구체적으로 확인
+간단한 프로젝트면 ok만 써도 충분
+
+if (response.status === 404) {
+  throw new Error('도시를 찾을 수 없습니다.');
+}
+
+if (response.status === 500) {
+  throw new Error('서버 오류입니다.');
+}
+
+switch (response.status) {
+  case 404:
+    throw new Error('데이터 없음'); //throw :즉시종료돼서 break생략가능
+  case 401:
+    throw new Error('인증 필요');
+  case 500:
+    throw new Error('서버 오류');
+  default:
+    throw new Error("알수없는 오류")
+}
+
+
+throw를 만나면 코드 실행이 중단되고 *가장 가까운 catch*로 이동
+끝까지 못 잡으면 Uncaught Error가 발생
+
+
+
+요즘에는 ||보다 ?? (null 병합 연산자) 를
+'' || '네트워크 오류' -> '네트워크 오류'
+
+'' ?? '네트워크 오류' -> '' // null 또는 undefined 일때 오른쪽사용
+
+*/
+

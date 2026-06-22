@@ -1,49 +1,59 @@
 
-
-const Flex = () => {
+const Flex = ()=> {
 
     return(
+
         <>
-        <h1>탄생일</h1>
-        <p>
-            flex: 2009년 
-            Grid: 2011년(마이크로소프트)
-            2020년경 주로 flex
-            우리나라대형기업들은 다른나라와마찬가지로 섞어씀
+        <header className="header">
+            <h1>Responsive Image Gallery</h1>
+            <p>Resize the broswer window to see the responsive effect</p>
+        </header>
 
-            웹사이트 큰 틀(header,sidebar,main,footer):grid
-            그리드 안 작은 구성요소들(logo,menu button 아이콘배치)
-            등은 flex로...
-        </p>
-        <h1>float 사용</h1>
-        <div className="float">
-            <div className="one">1</div>
-            <div className="two">2</div>
-            <div className="three">3</div>
-        </div>
-        <hr />
-         <h1>Flex 사용</h1>
-        <div className="flex">
-            <div className="one">1</div>
-            <div className="two">2</div>
-            <div className="three">3</div>
-        </div>
-        <hr />
-         <h1>Grid 사용</h1>
-        <div className="grid">
-            <div className="one">1</div>
-            <div className="two">2</div>
-            <div className="three">3</div>
-        </div>
-        <hr />
+        <main className="container">
+            <div className="column">
+                <img src="src/assets/images/flex/wedding.jpg" alt="" />
+                <img src="src/assets/images/flex/rocks.jpg" alt="" />
+                <img src="src/assets/images/flex/falls2.jpg" alt="" />
+                <img src="src/assets/images/flex/paris.jpg" alt="" />
+                <img src="src/assets/images/flex/nature.jpg" alt="" />
+                <img src="src/assets/images/flex/mist.jpg" alt="" />
+                <img src="src/assets/images/flex/paris.jpg" alt="" />
+            </div>
+
+            <div className="column">
+                <img src="src/assets/images/flex/underwater.jpg" alt="" />
+                <img src="src/assets/images/flex/ocean.jpg" alt="" />
+                <img src="src/assets/images/flex/wedding.jpg" alt="" />
+                <img src="src/assets/images/flex/mountainskies.jpg" alt="" />
+                <img src="src/assets/images/flex/rocks.jpg" alt="" />
+                <img src="src/assets/images/flex/underwater.jpg" alt="" />
+            </div>
+
+            <div className="column">
+                <img src="src/assets/images/flex/wedding.jpg" alt="" />
+                <img src="src/assets/images/flex/rocks.jpg" alt="" />
+                <img src="src/assets/images/flex/falls2.jpg" alt="" />
+                <img src="src/assets/images/flex/paris.jpg" alt="" />
+                <img src="src/assets/images/flex/nature.jpg" alt="" />
+                <img src="src/assets/images/flex/mist.jpg" alt="" />
+                <img src="src/assets/images/flex/paris.jpg" alt="" />
+            </div>
+
+            <div className="column">
+                <img src="src/assets/images/flex/underwater.jpg" alt="" />
+                <img src="src/assets/images/flex/ocean.jpg" alt="" />
+                <img src="src/assets/images/flex/wedding.jpg" alt="" />
+                <img src="src/assets/images/flex/mountainskies.jpg" alt="" />
+                <img src="src/assets/images/flex/rocks.jpg" alt="" />
+                <img src="src/assets/images/flex/underwater.jpg" alt="" />
+            </div>
+        
 
 
-        <code>
-           
-        </code>
+        </main>
+        
         </>
-
     )
-}
+};
 
 export default Flex;
