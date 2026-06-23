@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Container, Row, Col, Button, Spinner, Alert, Form} from "react-bootstrap";
+//📝 실사 예제 1. 할 일 목록 (Todo List)
 
+//겅부해라 ㅋㅋ
+
+//📝 실사 예제 2. 회원가입 Form (객체 State + 로딩 처리)
 
 const Practice = ()=>{
     //1여러 입력값을 객체 하나로 묶어서 관리
