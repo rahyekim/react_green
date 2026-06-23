@@ -24,6 +24,10 @@ const Header = ( ) => {
                     <NavDropdown.Item href="/flexweb">flexweb</NavDropdown.Item>
                     <NavDropdown.Item href="/grid">grid</NavDropdown.Item>
                     <NavDropdown.Item href="/layout">layout</NavDropdown.Item>
+                    <NavDropdown.Item href="/gridweb">gridweb</NavDropdown.Item>
+                    <NavDropdown.Item href="/girdtest">gridtest</NavDropdown.Item>
+
+                    <NavDropdown.Item href="/intro">jquery-intro</NavDropdown.Item>
                     <NavDropdown.Divider/>
 
                 </NavDropdown>

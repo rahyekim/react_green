@@ -225,6 +225,107 @@ body{
 
 
 //grid2
+//(mobile first) @media (min-width: 700px){} 대세
+
+/*
+ grid-column: 1 / -1; 👉  1 = 첫 번째 선 ..... -1 = 마지막 선 (끝)
+1번 라인부터 마지막 라인까지 전부 차지해라 👉무조건 가로 전체 폭 먹기 (위치 상관 없음)
+
+*/
+.wrap{
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr; //기본: 모바일 1열
+   //grid-template-columns: repeat(12, [col-start] 1fr);
+    gap: 10px;
+}
+
+.w-nav{
+    ul{
+    list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+}
+.wrap > * {
+    border: 2px solid  palevioletred;
+    background-color: rgb(235, 196, 203);
+    padding: 20px; 
+
+    //grid-column: col-start / span 12;
+}
+
+@media (min-width: 576px) {
+    .w-nav{
+        ul{display: flex;
+        justify-content: space-between;} //리스트형태(세로) 되어있는것을 가로로~
+    }
+
+    .wrap{
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .w-header, .w-nav{
+        grid-column: 1 / -1;
+    }
+
+    .w-content {
+        grid-column: 1;
+        grid-row:  3 / 5; //3번선부터 5번선까지... 
+    }
+
+    .w-sidebar{
+        grid-column: 2;
+        grid-row:  3 / 5;
+    }
+
+    .w-footer{
+        grid-column: 1;
+         grid-row:  5 / 6;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .wrap {
+        grid-template-columns: 200px 1fr 200px;
+    }
+    
+    .w-nav{
+        ul{
+            flex-direction: column;
+        }
+        grid-column: 1;
+        grid-row: 2/5;
+    }
+    .w-sidebar{
+        grid-column: 3;
+        grid-row: 3 /5;
+
+    }
+
+    .w-abs{
+        grid-row: 2/3;
+        grid-column: 3;
+    }
+    .w-footer{
+        grid-column: 1 / -1;
+    }
+
+    .w-content{
+        grid-column: 2;
+        grid-row: 2/5;
+    }
+}
+
+   
+
+
+
+
 
 
 

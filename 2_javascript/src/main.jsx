@@ -16,7 +16,7 @@ import Fx from './sub/func/Fx';
 import Re from './sub/func/Re';
 import Cate from './sub/func/Cate';
 import MyDate from './sub/date/MyDate';
-import Temporal from './sub/date/temporal';
+import Temp from './sub/date/Temporal';
 import DateVsTemp from './sub/date/DateVsTemp';
 
 //css학습
@@ -24,6 +24,10 @@ import Flex from "./sub/Flex"
 import Grid from './sub/Grid'
 import Layout from './sub/Layout'
 import FlexWeb from './sub/FlexWeb';
+
+import GridWeb from './sub/GridWeb';
+import GridTest from './sub/GridTest';
+import Intro from './sub/jquery/Intro';
 
 
 function App() {
@@ -43,14 +47,19 @@ function App() {
         <Route path='/cate' element= {<Cate/>}></Route>
 
         <Route path='/date' element= {<MyDate/>}></Route>
-        <Route path='/temp' element= {<Temporal/>}></Route>
+        <Route path='/temp' element= {<Temp/>}></Route>
         <Route path='/datevstemp' element= {<DateVsTemp/>}></Route>
 
 
         <Route path='/flex' element={<Flex/>}></Route>
         <Route path='/flexweb' element={<FlexWeb/>}></Route>
         <Route path='/grid' element={<Grid/>}></Route>
+        <Route path='/gridweb' element={<GridWeb/>}></Route>
+        <Route path='/gridtest' element={<GridTest/>}></Route>
         <Route path='/layout' element={<Layout/>}></Route>
+
+        
+        <Route path='/intro' element={<Intro/>}></Route>
 
       </Routes>
 

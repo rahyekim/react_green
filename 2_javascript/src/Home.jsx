@@ -1,10 +1,17 @@
 
 const Home = () => {
 
+    const now = new Date()
+
     return(
         <>
         
-        스키즈
+        <div className="home">
+            Have a good day
+
+        </div>
+     
+        
         </>
     )
 }

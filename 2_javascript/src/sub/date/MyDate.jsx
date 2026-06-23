@@ -31,6 +31,7 @@ const MyDate = ()=> {  //예약어는 변수명으로 사용할수 없음 const 
 
         return `${year}년 ${month} 월 ${day}일 ${hours}: ${minutes}: ${seconds}`;
         
+        //getDay() ⚠️=> “요일 숫자” (0~6 일요일~토요일)
     };
 
 
