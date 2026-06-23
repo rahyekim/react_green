@@ -33,7 +33,7 @@ const Header = ( ) => {
                 </NavDropdown>
 
                 
-                <Nav.Link href="">JSX</Nav.Link>
+                <Nav.Link href="/jsx">JSX</Nav.Link>
                 <Nav.Link href="">Components</Nav.Link>
                 <Nav.Link href="">Class</Nav.Link>
                 <Nav.Link href="">Props</Nav.Link>

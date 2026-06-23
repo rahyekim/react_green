@@ -28,6 +28,7 @@ import FlexWeb from './sub/FlexWeb';
 import GridWeb from './sub/GridWeb';
 import GridTest from './sub/GridTest';
 import Intro from './sub/jquery/Intro';
+import Jsx from './sub/react/Jsx';
 
 
 function App() {
@@ -58,8 +59,11 @@ function App() {
         <Route path='/gridtest' element={<GridTest/>}></Route>
         <Route path='/layout' element={<Layout/>}></Route>
 
-        
+
         <Route path='/intro' element={<Intro/>}></Route>
+        <Route path='/jsx' element={<Jsx/>}></Route>
+      
+
 
       </Routes>
 
