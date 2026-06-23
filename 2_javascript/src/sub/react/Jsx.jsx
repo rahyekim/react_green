@@ -24,11 +24,13 @@ export default function Jsx () { //본 함수형 컴포넌트...
     let w= "apple";
     if (q < 10) { w = "banana";}
 
-    //🔥 if 컴포넌트 추상화 
+    //🔥 if 컴포넌트 추상화 =
     function If ({condition, children}){
         return condition ? children : null;
-    }
-    
+    } 
+    //조건에 따라 보여줄 화면을 별도 컴포넌트로 분리해서 코드 깔끔하게 만드는 것"
+    //<If condition={user.isAdmin}> <AdminPanel/> </If>
+    // => {isAdmin && <AdminPage />}
     return(
         <>
         <h1>Javascript XML</h1>  {/*hxml은 고정된 태그 xml은 내가 사용할 태그를 만들어씀*/}

@@ -20,7 +20,7 @@ const Forms = () => {
 
     function formSubmit(e){
         e.preventDefault();
-        alert(uname)
+        alert(uname);
     }
 
     //textarea
@@ -36,7 +36,7 @@ const Forms = () => {
             <Row>
                 <Col md={3}>
                     <h1>Forms</h1>
-                    <form action="">  {/**????? */}
+                    <form action=""> 
                         <label htmlFor="">Enter your name:</label>
                         <Form.Control value={name} onChange={handleChange}/>
                         <p>current name: {name}</p>

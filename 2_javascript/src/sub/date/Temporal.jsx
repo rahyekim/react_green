@@ -60,7 +60,7 @@ const Temp = ()=> {
                     3일뒤로 덮어 씌워진다... 원본훼손... 파이썬 copy
                     불변성 원본은 그대로 둔채 3일이 더해진 새로운 결과물
                     (3) 객체에 짬뽕 시간, 날짜, 타임존
-                    <code>Temporal , PlainDate </code>
+                    <code>Temporal.PlainDate </code>
                     (4) 울며 겨자먹기에 무거운 라이브러리
                     Moment.js, Day.js , date-fns 
                 </p>

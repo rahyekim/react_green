@@ -35,7 +35,7 @@ const MyDate = ()=> {  //예약어는 변수명으로 사용할수 없음 const 
         const days = ['일', '월', '화', '수', '목', '금', '토'];
         const dayOfWeek = days[date.getDay()]
 
-        return `${year}년 ${month} 월 ${day}일 ${dayOfWeek}요일 ${hours}: ${minutes}: ${seconds}`;
+        return `${year}년 ${month} 월 ${day}일 (${dayOfWeek}) ${hours}: ${minutes}: ${seconds}`;
        }; 
         //getDay() ⚠️=> “요일 숫자” (0~6 일요일~토요일)
        
