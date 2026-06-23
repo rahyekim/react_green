@@ -29,8 +29,10 @@ import GridWeb from './sub/GridWeb';
 import GridTest from './sub/GridTest';
 import Intro from './sub/jquery/Intro';
 import Jsx from './sub/react/Jsx';
-
-
+import Class from './sub/react/Class';
+import Props from './sub/react/Props';
+import Event from './sub/react/Event';
+import Forms from './sub/react/Forms';
 function App() {
 
 
@@ -62,6 +64,10 @@ function App() {
 
         <Route path='/intro' element={<Intro/>}></Route>
         <Route path='/jsx' element={<Jsx/>}></Route>
+        <Route path='/class' element={<Class/>}></Route>
+        <Route path='/props' element={<Props/>}></Route>
+        <Route path='/event' element={<Event/>}></Route>
+        <Route path='/forms' element={<Forms/>}></Route>
       
 
 

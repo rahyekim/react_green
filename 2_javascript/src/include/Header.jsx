@@ -34,14 +34,14 @@ const Header = ( ) => {
 
                 
                 <Nav.Link href="/jsx">JSX</Nav.Link>
-                <Nav.Link href="">Components</Nav.Link>
-                <Nav.Link href="">Class</Nav.Link>
-                <Nav.Link href="">Props</Nav.Link>
-                <Nav.Link href="">Event</Nav.Link>
-                <Nav.Link href="">Forms</Nav.Link>
-                <Nav.Link href="">Router</Nav.Link>
-                <Nav.Link href="">HOC</Nav.Link>
-                <Nav.Link href="">HOOKS</Nav.Link>
+                <Nav.Link href="/components">Components</Nav.Link>
+                <Nav.Link href="/class">Class</Nav.Link>
+                <Nav.Link href="/props">Props</Nav.Link>
+                <Nav.Link href="/event">Event</Nav.Link>
+                <Nav.Link href="/forms">Forms</Nav.Link>
+                <Nav.Link href="/router">Router</Nav.Link>
+                <Nav.Link href="/hoc">HOC</Nav.Link>
+                <Nav.Link href="/hooks">HOOKS</Nav.Link>
 
                 <NavDropdown 
                     title="es6" 

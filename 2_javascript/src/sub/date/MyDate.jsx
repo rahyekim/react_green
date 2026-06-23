@@ -8,12 +8,16 @@ const MyDate = ()=> {  //예약어는 변수명으로 사용할수 없음 const 
     
     useEffect(()=> { //1초마다 시간 바뀜 구현
         const timer = setInterval(()=> {setNow(new Date());}, 1000)
+
         //⭐ 1초(1000ms)마다 현재 시간 객체를 새로 만들어서 변수에 쏙 집어넣음
         //컴포넌트가 사라질때 타이머정리 => 메모리 누수 방지 
         // ⭐화면에서 시계가 사라질 때 타이머를 확실하게 청소(Clean-up)해 줌!
+
         return () => clearInterval(timer);  //📜return(유언장)
         console.log("처음 한번만 실행")
-    }, []); // 🚨 [] ⭐처음 켜질 때 딱 한 번만 타이머가 세팅
+    }, []);
+
+     // 🚨 [] ⭐처음 켜질 때 딱 한 번만 타이머가 세팅
     // ,[count] => count값이 바뀔때마다 다시 그려줌...
     // 최악의상황 []빼먹었을때 ;1초마다 시간이 바뀔 때마다(리렌더링) 타이머가 매번 새로 계속 만들어져서
     //  타이머가 수천 개로 증식 -브라우저터짐
@@ -28,11 +32,13 @@ const MyDate = ()=> {  //예약어는 변수명으로 사용할수 없음 const 
         const hours= String(date.getHours()).padStart(2, '0')
         const minutes= String(date.getMinutes()).padStart(2, '0')
         const seconds=String(date.getSeconds()).padStart(2, '0')
+        const days = ['일', '월', '화', '수', '목', '금', '토'];
+        const dayOfWeek = days[date.getDay()]
 
-        return `${year}년 ${month} 월 ${day}일 ${hours}: ${minutes}: ${seconds}`;
-        
+        return `${year}년 ${month} 월 ${day}일 ${dayOfWeek}요일 ${hours}: ${minutes}: ${seconds}`;
+       }; 
         //getDay() ⚠️=> “요일 숫자” (0~6 일요일~토요일)
-    };
+       
 
 
     //날짜 계산 함수 (ex 일주일뒤)
