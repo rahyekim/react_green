@@ -33,6 +33,10 @@ import Class from './sub/react/Class';
 import Props from './sub/react/Props';
 import Event from './sub/react/Event';
 import Forms from './sub/react/Forms';
+
+import Practice from './sub/react/Practice';
+
+
 function App() {
 
 
@@ -70,7 +74,7 @@ function App() {
         <Route path='/forms' element={<Forms/>}></Route>
       
 
-
+        <Route path='/practice' element={<Practice/>}></Route>
       </Routes>
 
 
