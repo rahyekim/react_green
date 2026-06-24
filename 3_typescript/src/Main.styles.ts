@@ -45,3 +45,22 @@ export const PageContainer = styled.div`
 
 
 `;
+
+
+
+//🔥 핵심 1: styled.xxx  button만들기 css만들기 div만들기
+//🔥 핵심 2: 백틱` ` 안은 CSS
+//🔥 핵심 3: 사용=> <Box> : Box는 이제 “스타일 입힌 div”
+//🔥 핵심 4: props로 스타일 바꾸기 (읽기만)
+
+
+/*
+🧠 Styled Components =
+
+“HTML 태그 + CSS를 JS 안에 합쳐놓은 것”
+
+const 컴포넌트이름 = styled.태그`
+  CSS
+`;
+
+*/

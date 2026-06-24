@@ -1,32 +1,33 @@
 import { useState } from "react";
-//1회차 그냥쓰기
-//2회차 안 보고 쳐보기 막히면 보기
-// 3단계 응용하기
-function MyPractice() {
+
+export default function Mypractice() {
+
   const [form, setForm] = useState({
-    name: "",
-    fruit: "",
-    agree: false
+    name:"",
+    fruit:"",
+    agree:false
   });
 
   const [users, setUsers] = useState([]);
 
-  const handleChange = (e) => {
-    const { name, value, checked, type } = e.target;
+  const handleChange = (e)=>{
+    const {name, value, type, checked} = e.target;
 
-    setForm(prev => ({
+    setForm(prev=>({
       ...prev,
       [name]: type === "checkbox" ? checked : value
-    }));
+    }))
+
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
     setUsers(prev => [
       ...prev,
       {
-        id: Date.now(),
+        id: Date.now(), //new Date()??
         ...form
       }
     ]);
@@ -39,101 +40,88 @@ function MyPractice() {
   };
 
   const handleDelete = (id) => {
-    setUsers(prev =>
-      prev.filter(user => user.id !== id)
-    );
-  };
+    setUsers(prev => (
+      prev.filter(user=> user.id !==id)
+    ));
+  }
 
-  return (
+  return(
     <>
-      <h1>회원 등록</h1>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="이름"
+    <h1 style={{padding: '20px'}}> 📢회원등록</h1>
+    <form onSubmit={handleSubmit}>
+      <label >이름:</label>
+      <input placeholder="이름"
+        type="text" name="name" onChange={handleChange} value={form.name}/>
+    <h3 style={{padding: "10px"}}> 좋아하는 과일 🍇 </h3>
+  
+    <label>
+      <input type="radio" 
+        checked={form.fruit === "apple"} 
+        name="fruit" 
+        value="apple"
+        onChange={handleChange}
+      />
+    🍎사과</label>
+    
+    <label >
+      <input type="radio"
+      name="fruit"
+      value="banana"
+      checked={form.fruit === "banana"}
+      onChange={handleChange}
+       />🍌바나나</label>
+      
+      <label>
+        <input type="radio"
+        name="fruit"
+        value="pineapple"
+        checked={form.fruit === "pineapple"}
+        onChange={handleChange}
+         />
+        파인애플🍍</label>
+      <br />
+     
+      <label>
+        <input 
+        type="checkbox" 
+        name="agree"
+        checked={form.agree}
+        onChange={handleChange}
         />
+        동의합니다</label>
+        <button
+        style={{ padding: "10px",borderRadius:"10px", border:"2px solid blue"}} 
+        type="submit">등록</button>
+    </form>
 
-        <h3>좋아하는 과일</h3>
+    <hr />
 
-        <label>
-          <input
-            type="radio"
-            name="fruit"
-            value="apple"
-            checked={form.fruit === "apple"}
-            onChange={handleChange}
-          />
-          사과
-        </label>
+    <h2>📚 회원 목록</h2>
 
-        <label>
-          <input
-            type="radio"
-            name="fruit"
-            value="banana"
-            checked={form.fruit === "banana"}
-            onChange={handleChange}
-          />
-          바나나
-        </label>
+    {users.length === 0 ? (<p> 등록된 회원 없음</p>) :
 
-        <br />
-
-        <label>
-          <input
-            type="checkbox"
-            name="agree"
-            checked={form.agree}
-            onChange={handleChange}
-          />
-          동의합니다
-        </label>
-
-        <br />
-
-        <button type="submit">
-          등록
-        </button>
-      </form>
-
+    (users.map(user=>(
+       <div key={user.id}>
+        <p>
+          이름: {user.name}
+        </p>
+        <p>
+          과일: {user.fruit}
+        </p>
+        <p>
+          동의: {user.agree ? "0" : "X"}
+        </p>
+        <button onClick={()=>handleDelete(user.id)}> 삭제 </button>
       <hr />
-
-      <h2>회원 목록</h2>
-
-      {users.length === 0 ? (
-        <p>등록된 회원 없음</p>
-      ) : (
-        users.map(user => (
-          <div key={user.id}>
-            <p>
-              이름: {user.name}
-            </p>
-
-            <p>
-              과일: {user.fruit}
-            </p>
-
-            <p>
-              동의 여부:
-              {user.agree ? " O" : " X"}
-            </p>
-
-            <button
-              onClick={() => handleDelete(user.id)}
-            >
-              삭제
-            </button>
-
-            <hr />
-          </div>
-        ))
-      )}
+       </div>
+    ))
+   )
+  }
+    
     </>
-  );
+  )
+  
+  
+  
+  
 }
-
-export default MyPractice;
