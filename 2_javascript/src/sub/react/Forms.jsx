@@ -35,6 +35,22 @@ const Forms = () => {
     const handleInputEmail = (e) => {
         setEmail(e.target.value)
     }
+
+
+  
+        const [selectedFruit, setSelectedFruit] = useState('apple');
+
+        const handleChangeFruit = e=>{
+            setSelectedFruit(e.target.value);
+        }
+        const fruitOptions = [
+            { value: 'apple', label: '사과 🍎' },
+            { value: 'banana', label: '바나나 🍌' },
+            { value: 'orange', label: '오렌지 🍊' },
+            { value: 'grape', label: '포도 🍇' }
+          ];
+    
+    
     return(
         <>
         <Container fluid>
@@ -75,6 +91,24 @@ const Forms = () => {
                 </form>
                 
                 </Col>
+
+                <div style={{padding:'20px'}}>
+                    <h1>select</h1>
+                    <h2>🍎 좋아하는 과일 골라보세요!</h2>
+
+                    <select value={selectedFruit} onChange={handleChangeFruit}>
+
+                        { fruitOptions.map((fruit)=>(
+                            <option key={fruit.value} value={fruit.value}>{fruit.label}</option>
+                        ))}
+                       
+                    </select>
+
+                    <p style={{marginTop: '16px'}}>
+                        지금당신이 선택한과일은?
+                        <strong>{selectedFruit}</strong>
+                    </p>
+                </div>
                 
             </Row>
         </Container>

@@ -35,6 +35,7 @@ import Event from './sub/react/Event';
 import Forms from './sub/react/Forms';
 
 import Practice from './sub/react/Practice';
+import MyPractice from './sub/react/Practice2';
 import Forms2 from './sub/react/Forms2';
 import Hoc from './sub/react/Hoc';
 
@@ -91,6 +92,7 @@ function App() {
       
 
         <Route path='/practice' element={<Practice/>}></Route>
+        <Route path='/practice2' element={<MyPractice/>}></Route>
       </Routes>
 
 

@@ -100,7 +100,7 @@ const Hooks = () => {
                 <h3>메모리제이션된 값을 리턴</h3>
                 </Col>
                 <Col md={3}>
-                <h1>Custom hook </h1>
+                <h1>✅Custom hook </h1>
                 <h3>json으로 제목을 달았는데 이걸 다른 컴포넌트에서도 
                     동일하게 사용하고 싶어서 본을 떠서 만들어 놓음
                 </h3>

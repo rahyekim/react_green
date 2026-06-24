@@ -2,7 +2,7 @@ import { useState } from "react";
 //1회차 그냥쓰기
 //2회차 안 보고 쳐보기 막히면 보기
 // 3단계 응용하기
-function App() {
+function MyPractice() {
   const [form, setForm] = useState({
     name: "",
     fruit: "",
@@ -136,4 +136,4 @@ function App() {
   );
 }
 
-export default App;
+export default MyPractice;
