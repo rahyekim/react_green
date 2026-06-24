@@ -30,6 +30,11 @@ const Forms = () => {
        setMytxt( e.target.value);
     }
 
+    //select email
+    const [email, setEmail] = useState("example@gmail.com") 
+    const handleInputEmail = (e) => {
+        setEmail(e.target.value)
+    }
     return(
         <>
         <Container fluid>
@@ -57,6 +62,18 @@ const Forms = () => {
                     <textarea name="" id="" value={mytxt} onChange={handleTxt}/>
                     <p>Current value: {mytxt}</p>
                 </form>
+                </Col>
+                <Col md={3}>
+                <h1>Select</h1>
+                <form action="">
+                    <select value={email} name="email" id="" onChange={handleInputEmail}>
+                        <option value="">선택하세요</option>
+                        <option value="gmail">gmail</option>
+                        <option value="kakao">kakao</option>
+                        <option value="naver">naver</option>
+                    </select>
+                </form>
+                
                 </Col>
                 
             </Row>

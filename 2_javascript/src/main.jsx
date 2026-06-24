@@ -35,6 +35,14 @@ import Event from './sub/react/Event';
 import Forms from './sub/react/Forms';
 
 import Practice from './sub/react/Practice';
+import Forms2 from './sub/react/Forms2';
+import Hoc from './sub/react/Hoc';
+
+import Sus from './sub/react/Sus';
+import Portals from './sub/react/Portals';
+import Fref from './sub/react/Fref';
+import Hooks from './sub/react/Hooks';
+import Trans from './sub/react/Trans';
 
 
 function App() {
@@ -72,6 +80,14 @@ function App() {
         <Route path='/props' element={<Props/>}></Route>
         <Route path='/event' element={<Event/>}></Route>
         <Route path='/forms' element={<Forms/>}></Route>
+        <Route path='/forms2' element={<Forms2/>}></Route>
+        <Route path='/hoc' element={<Hoc/>}></Route>
+
+        <Route path='/sus' element={<Sus/>}></Route>
+        <Route path='/trans' element={<Trans/>}></Route>
+        <Route path='/portals' element={<Portals/>}></Route>
+        <Route path='/fref' element={<Fref/>}></Route>
+        <Route path='/hooks' element={<Hooks/>}></Route>
       
 
         <Route path='/practice' element={<Practice/>}></Route>

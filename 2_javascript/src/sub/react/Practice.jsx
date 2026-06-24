@@ -20,10 +20,10 @@ const Practice = ()=>{
     //2.모든 인풋창을 하나로 지배하는 만능 onChange함수
     const handleInputChange = e =>{
         const {name, value} = e.target;
-        setFormData({
-            ...formData, 
+        setFormData(prev => ({
+            ...prev, 
             [name] : value
-        });
+        }));
     }
 
     //3. 가입버튼 눌렀을 떄 실행

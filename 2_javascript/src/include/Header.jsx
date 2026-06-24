@@ -39,8 +39,13 @@ const Header = ( ) => {
                 <Nav.Link href="/props">Props</Nav.Link>
                 <Nav.Link href="/event">Event</Nav.Link>
                 <Nav.Link href="/forms">Forms</Nav.Link>
+                <Nav.Link href="/forms2">Forms2</Nav.Link>
                 <Nav.Link href="/router">Router</Nav.Link>
                 <Nav.Link href="/hoc">HOC</Nav.Link>
+                <Nav.Link href="/fref">Fref</Nav.Link>
+                <Nav.Link href="/trans">Trans</Nav.Link>
+                <Nav.Link href="/portals">Portals</Nav.Link>
+                <Nav.Link href="/sus">Sus</Nav.Link>
                 <Nav.Link href="/hooks">HOOKS</Nav.Link>
 
                 <NavDropdown 
