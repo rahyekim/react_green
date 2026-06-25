@@ -280,26 +280,6 @@ body{
         "abs footer"
         ;
     }
-
-    // .w-header, .w-nav{
-    //     grid-column: 1 / -1;
-    // }
-
-    // .w-content {
-    //     grid-column: 1;
-    //     grid-row:  3 / 5; //3번선부터 5번선까지... 
-    // }
-
-    // .w-sidebar{
-    //     grid-column: 2;
-    //     grid-row:  3 / 5;
-    // }
-
-    // .w-footer{
-    //     grid-column: 1;
-    //      grid-row:  5 / 6;
-    // }
-
 }
 
 @media (min-width: 768px) {
@@ -318,33 +298,75 @@ body{
     .w-nav{
         ul{
             flex-direction: column;
-        }
-        // grid-column: 1;
-        // grid-row: 2/5;
+        }   
+    }
+}
+
+/*여긴 column으로 뼈대 잡아주고 autoflow자동으로배치-> row로 수정해줌...
+
+@media (min-width: 576px) {
+    .w-nav{
+        ul{display: flex;
+        justify-content: space-between;} //리스트형태(세로) 되어있는것을 가로로~
+    }
+
+    .wrap{
+      
+        grid-template-columns: 1fr 2fr; //✨2열 2칸
+    }
+
+    .w-header, .w-nav, .w-footer{
+        grid-column : 1 / -1;
+    }
+
+    .w-content {
+        grid-column: 2;
+        grid-row:3/5;
+    }
+
+    .w-sidebar{
+        grid-column: 1;
+        grid-row:3;
+      
+    }
+
+
+}
+
+@media (min-width: 768px) {
+
+    .wrap {
+        display: grid;
+        
+        grid-template-columns: 240px 1fr 240px;
+        ;
     }
     
-    // .w-sidebar{
-    //     grid-column: 3;
-    //     grid-row: 3/5;
+    .w-nav{
+        ul{
+            flex-direction: column;
+        }
+    }
 
-    // }
+    .w-header, .w-footer {
+        grid-column: 1/-1;
+    }
+    
+    .w-sidebar{
+       grid-column: 1;
+       grid-row: 3/5;
+      
+    }
 
-    // .w-abs{
-    //     grid-row: 2/3;
-    //     grid-column: 3;
-    // }
-    // .w-footer{
-    //     grid-column: 1 / -1;
-    // }
-
-    // .w-content{
-    //     grid-column: 2;
-    //     grid-row: 2/5;
-    // }
+    .w-abs{
+       
+        grid-column: 3;
+        grid-row: 3/5;
+    }
 }
 
    
-
+*/
 
 
 
