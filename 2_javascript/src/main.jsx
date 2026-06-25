@@ -34,8 +34,8 @@ import Props from './sub/react/Props';
 import Event from './sub/react/Event';
 import Forms from './sub/react/Forms';
 
-import Practice from './sub/react/Practice';
-import MyPractice from './sub/react/Practice2';
+import Practice from './sub/react/my/Practice';
+import MyPractice from './sub/react/my/Practice2';
 import Forms2 from './sub/react/Forms2';
 import Hoc from './sub/react/Hoc';
 

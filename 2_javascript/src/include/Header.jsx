@@ -61,7 +61,8 @@ const Header = ( ) => {
                     <NavDropdown.Item href="/datevstemp">datevstemporal</NavDropdown.Item>
                     <NavDropdown.Divider/>
                     <NavDropdown.Item href="/geo">위치기반</NavDropdown.Item>
-                    <NavDropdown.Item href="/practice">My Practice</NavDropdown.Item>
+                    <NavDropdown.Item href="/practice">My 회원가입</NavDropdown.Item>
+                    <NavDropdown.Item href="/practice2">My 회원등록 </NavDropdown.Item>
 
                 </NavDropdown>
                 <Nav.Link href="" disabled>사용하지않을때</Nav.Link>
