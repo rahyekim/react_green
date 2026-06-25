@@ -26,10 +26,11 @@ user.profileImage?.length 이런거 많이씀
 🟡 unknown (생각보다 자주 씀)
 서버에서 응답이 왔을 때 뭐가 올지 모름... 
 옛날엔 const data: any= await fetch(...) 
-요즘추천 const data: unknown = await fetch(...) =>  그리고 검사
+요즘추천 const data: unknown = await fetch(...) =>  그리고 검사 typeof 👉 반드시 체크
+
 
 if (
-  typeof data === "object" &&
+  typeof data === "object" &&   
   data !== null
 ) {
   // 사용
@@ -70,7 +71,7 @@ const Ext = () => {
     function add (a:number, b:number){
         return a+b
     }
-
+    //타입 추론 = 타입스크립트가 값을 보고 자동으로 타입을 정해주는 기능
     
     return(
         <>
@@ -93,7 +94,7 @@ const Ext = () => {
                     🔴 혼합배열
                     const data: (number | string)[] = [1, "two", 3];
                     🔴 객체 배열
-{/* 
+{/*  
                     type Item = {
                         id: number;
                         name: string;
