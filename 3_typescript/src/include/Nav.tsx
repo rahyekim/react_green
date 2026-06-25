@@ -5,13 +5,14 @@ const Nav = () => {
 
     return(
         <>
-         <S.NavBar>
+        <S.NavBar as = "header">
           <S.Logo>TypeScript</S.Logo>
-          <S.NavLinks>
-            <S.StyledLink to="/">Home</S.StyledLink>
-            <S.StyledLink to="/special">Special</S.StyledLink>
-          </S.NavLinks>
-      </S.NavBar>
+        
+            <ul>
+            <li><S.StyledLink to="/">Home</S.StyledLink></li>
+            <li><S.StyledLink to="/special">Special</S.StyledLink></li>
+            </ul>
+        </S.NavBar>
         </>
     )
 };
