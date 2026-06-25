@@ -25,7 +25,7 @@ const App = () => {
         </M.Nav>
         {/*✨ 레이아웃은 유지하고 content만 교체 ✨*/}
         <M.Content>
-          <Routes>
+          <Routes>  {/*기본 페이지 리다이렉트 */}
             <Route path='/' element={<Navigate to="/home" replace/>}></Route>
             <Route path='/home' element={<Home/>}></Route>
             <Route path='/basic' element={<Basic/>}></Route>

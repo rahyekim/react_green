@@ -172,7 +172,7 @@ const 컴포넌트이름 = styled.태그`
 
 | 1 | 2 | 3 | 4 |
 
-grid-column : 2/4; (두칸 차지 2,3)
+grid-column : 2; 
 
 grid-column: 1 / -1; 전체차지 
 
@@ -200,14 +200,6 @@ import { Outlet } from "react-router-dom";
       ├ Route (About)
 </Routes>
 
-🔵  grid-template-rows: auto 1fr auto;
-👉 “3줄 구조로 고정”
-
-header = auto
-main = 남은 공간 (1fr)
-footer = auto
-
 🔵 min-height: 100vh;
 화면 전체 높이 확보// 없으면 내용만큼만 높이 생김
-
 */
