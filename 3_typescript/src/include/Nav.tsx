@@ -1,4 +1,4 @@
-import * as S from '../Main.styles';
+import * as S from '../css/Main.styles';
 
 
 const Nav = () => {

@@ -1,139 +1,138 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import { Link } from 'react-router-dom';
-
-//🌟CSS 코드를 입힌 나만의 맞춤형 태그(컴포넌트)를 만든다.
-
-//반응형 크기 기준점 변수
-const sm = '576px'
-const md = '768px'
+import styled, { createGlobalStyle } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const GlobalStyle = createGlobalStyle`
+
 *{
-box-sizing: border-box;
+    box-sizing: border-box;
 }
 `;
 
+const sm =  "567px";
+const md =  "768px";
 
-
-//전체 레이아웃을 감싸는 그리드 컨테이너
+//1)
 export const Container = styled.div`
 
-    display : grid;
-    grid-template-columns : repeat(12, [col-start] 1fr);
+    display: grid;
+    grid-template-columns: 1fr;
     gap:20px;
+    min-height: 100vh; //🔵화면 전체 높이 확보// 없으면 내용만큼만 높이 생김
 
-        /*mobile first*/
-        & > * {
-        border : 1px solid green;
+    & > * {
+        border: 1px solid green;
         background-color: beige;
-        padding: 10px;
-        }
-
+        padding: 18px;
+        grid-column: 1 / span 12;
+    }
+    @media (min-width: ${sm}){
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 1fr 100px;
+    }
+     @media (min-width: ${md}){
+        grid-template-columns: 300px 1fr 300fr;
+        grid-template-rows: 200px 1fr 200px;
+    }
 `;
 
+export const Head = styled.header`  //상속 
+   grid-row: 1/2;
+`;
 
-
-//전체 네비게이션 바 컨테이너
 export const NavBar = styled.nav`
-    background-color: #333;
-    padding: 1rem 2rem ; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     ul{
-    list-style: none; margin:0 ; padding: 0;
+        list-style: none;
+        margin:0; padding:0;
 
-    @media (min-width: ${sm}){
-        display : flex; justify-content:space-between;
-}
+        @media (min-width: ${sm}){
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        @media (min-width: ${md}){
+            flex-direction: column;
+        }
+    }
     @media (min-width: ${md}){
-        flex-direction: column;
-}
+        grid-column: 1 / -1;
+        grid-row: 2/3;
+     
     }
 `;
-
-//로고스타일
-
-export const Logo = styled.h1`
-
-color: #fff; margin:0 ; font-size: 1.5rem;
-
-`;
-
-//메뉴 링크들을 담는 박스
-export const NavLinks = styled.div`
-    display:flex; gap:20px;
-`;
-
+// nav ul li a 대신에 리액트 라우터 link 스타일링
 
 export const StyledLink = styled(Link)`
-    color : #aaa ;
-    text-decoration: none;
-    font-size:1.2rem;
-    font-weight: bold;
-    transition: color 0.2s ease-in-out;
+    color:blue;
+    text-decoration: underline;
+    display: inline-block;
+    padding: 2px 0;
+`;
+//가운데 라우터가 교체될 본문 영역 !
+export const Content = styled.div`
+    @media ( min-width : ${sm} ){
+        /* grid-column:  2 / 10; */
 
-    &:hover{
-        color: #fff;
+    }
+    @media ( min-width : ${md} ){
+        /* grid-column:  3 / span 8;
+        grid-row : 2 / 4; */
     }
 `;
-export const Content = styled.main`
 
-    @media (min-width: ${sm}){
-        grid-column: col-start 4/ span 9 ;
+
+export const SideBar = styled.div`
+
+
+     @media ( min-width : ${sm} ){
+        grid-column:  1 /  2;
+        grid-row: 2/-1 ;
+
     }
-    @media (min-width: ${md}){
-        grid-column: col-start 3/ span 8 ;
-        grid-row: 2 /4;
+    @media ( min-width : ${md} ){
+        grid-column: / span 2;
+        grid-row : auto;
     }
 `;
-export const Sidebar = styled.aside`
 
-    @media (min-width: ${sm}){
-        grid-column: col-start; span 3;
-
-    }
-    @media (min-width: ${md}){
-        
-    }
-
-
-`;
 export const Ads = styled.div`
 
-    @media (min-width: ${sm}){
+
+     @media ( min-width : ${sm} ){
+        /* grid-column: 1 / span 3;
+        grid-row: 4; */
 
     }
-    @media (min-width: ${md}){
-        
-    }
-`;
-
-export const Footer = styled.footer`
-
-    @media (min-width: ${sm}){
-
-    }
-    @media (min-width: ${md}){
-    
+    @media ( min-width : ${md} ){
+        /* grid-column:  11 / span 2;
+        grid-row: 2 / 3
+         */
     }
 `;
 
-export const PageContainer = styled.div`
-    padding: 2rem;
+export const Footer = styled.div`
+      @media ( min-width : ${sm} ){
+        /* grid-column: 4 / span 9;
+        grid-row: 4; */
 
+    }
+    @media ( min-width : ${md} ){
+        /* grid-column:  1 / span 12; */
 
+    }
 `;
-
-
-//🔥 핵심 1: styled.xxx  button만들기 css만들기 div만들기
-//🔥 핵심 2: 백틱` ` 안은 CSS
-//🔥 핵심 3: 사용=> <Box> : Box는 이제 “스타일 입힌 div”
-//🔥 핵심 4: props로 스타일 바꾸기 (읽기만)
 
 
 /*
+
+🔥 핵심 1: styled.xxx  button만들기 css만들기 div만들기
+🔥 핵심 2: 백틱` ` 안은 CSS
+🔥 핵심 3: 사용=> <Box> : Box는 이제 “스타일 입힌 div”
+🔥 핵심 4: props로 스타일 바꾸기 (읽기만)
+
+
+
 🧠 Styled Components =
 
 “HTML 태그 + CSS를 JS 안에 합쳐놓은 것”
@@ -188,4 +187,5 @@ footer = auto
 
 🔵 min-height: 100vh;
 화면 전체 높이 확보// 없으면 내용만큼만 높이 생김
+
 */
