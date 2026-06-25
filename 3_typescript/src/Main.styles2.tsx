@@ -6,8 +6,10 @@ export const GlobalStyle = createGlobalStyle`
 *{
     box-sizing: border-box;
 }
-`;
 
+
+`;
+//반응형 크기 기준점 변수
 const sm =  "567px";
 const md =  "768px";
 
@@ -17,26 +19,29 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap:20px;
+    /* grid-auto-rows: min-content; */
+
     min-height: 100vh; //🔵화면 전체 높이 확보// 없으면 내용만큼만 높이 생김
 
     & > * {
-        border: 1px solid green;
-        background-color: beige;
-        padding: 18px;
-        grid-column: 1 / span 12;
+        border: 1px solid #ccc;
+        background-color: #bdbda3;
+        padding: 10px;
+        /* grid-column: 1 / span 12; */
     }
     @media (min-width: ${sm}){
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100px 1fr 100px;
+        grid-template-columns: 1fr 2fr;
+       
     }
      @media (min-width: ${md}){
-        grid-template-columns: 300px 1fr 300fr;
-        grid-template-rows: 200px 1fr 200px;
+        grid-template-columns: 240px 1fr 240px;
+       
     }
 `;
 
 export const Head = styled.header`  //상속 
-   grid-row: 1/2;
+        grid-column: 1 / -1;
+   
 `;
 
 export const NavBar = styled.nav`
@@ -55,12 +60,16 @@ export const NavBar = styled.nav`
             flex-direction: column;
         }
     }
+  
+    grid-column: 1 / -1;
     @media (min-width: ${md}){
-        grid-column: 1 / -1;
-        grid-row: 2/3;
-     
+        grid-column: 1 ;
+        grid-row: 2/4;
     }
 `;
+     
+    
+
 // nav ul li a 대신에 리액트 라우터 link 스타일링
 
 export const StyledLink = styled(Link)`
@@ -72,12 +81,12 @@ export const StyledLink = styled(Link)`
 //가운데 라우터가 교체될 본문 영역 !
 export const Content = styled.div`
     @media ( min-width : ${sm} ){
-        /* grid-column:  2 / 10; */
+     grid-column: 2;
 
     }
     @media ( min-width : ${md} ){
-        /* grid-column:  3 / span 8;
-        grid-row : 2 / 4; */
+       grid-column: 2;
+       grid-row: 2/4;
     }
 `;
 
@@ -86,13 +95,13 @@ export const SideBar = styled.div`
 
 
      @media ( min-width : ${sm} ){
-        grid-column:  1 /  2;
-        grid-row: 2/-1 ;
+        grid-column: 1;
+        grid-row: 3;
 
     }
     @media ( min-width : ${md} ){
-        grid-column: / span 2;
-        grid-row : auto;
+        grid-column: 3;
+       
     }
 `;
 
@@ -100,27 +109,31 @@ export const Ads = styled.div`
 
 
      @media ( min-width : ${sm} ){
-        /* grid-column: 1 / span 3;
-        grid-row: 4; */
+      grid-column: 1;
 
     }
     @media ( min-width : ${md} ){
-        /* grid-column:  11 / span 2;
-        grid-row: 2 / 3
-         */
+       grid-column: 3;
+       
     }
 `;
 
 export const Footer = styled.div`
-      @media ( min-width : ${sm} ){
-        /* grid-column: 4 / span 9;
-        grid-row: 4; */
+    grid-column: 1 / -1;
+
+    @media ( min-width : ${sm} ){
+       grid-column: 2;
 
     }
     @media ( min-width : ${md} ){
-        /* grid-column:  1 / span 12; */
+        grid-column: 1 / -1;
 
     }
+`;
+
+export const PageContainer = styled.div`
+padding:2rem; text-align:center; 
+font-family:sans-serif;
 `;
 
 

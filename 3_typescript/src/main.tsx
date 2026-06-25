@@ -30,9 +30,9 @@ const App = () => {
             <Route path='/home' element={<Home/>}></Route>
             <Route path='/basic' element={<Basic/>}></Route>
             <Route path='/special' element={<Special/>}></Route>
-            <Route path='/test' element={<Test/>}>
-                <Route path='home' element={<TestHome/>}></Route>
-            </Route>
+            <Route path='/test' element={<Test/>}></Route>
+            <Route path='/test/home' element={<TestHome/>}></Route>
+           
           </Routes>
         </M.Content>
 

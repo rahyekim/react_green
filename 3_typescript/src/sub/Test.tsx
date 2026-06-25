@@ -1,5 +1,5 @@
 import * as S from '../Main.styles2';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 
 //스타일드 컴포넌트 linking
 // import Home from '../Home';
@@ -29,9 +29,9 @@ const Test = () => {
         </S.SideBar>
 
         <S.Ads> Ads </S.Ads>
-
+        <S.Footer>the footer</S.Footer>
       {/* 🔥 이게 핵심 */}
-        <Outlet />
+        {/* <Outlet /> */}
        </S.Container>
     
    
