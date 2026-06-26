@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
 }
 `;
 
-const sm =  "567px";
-const md =  "768px";
+const sm = '576px';
+const md = '768px';
 
 //1)전체 레이아웃을 감싸는 그리드 컨테이너
 export const Container = styled.div`
@@ -29,13 +29,13 @@ export const Container = styled.div`
     min-height: 100vh; //🔵화면 전체 높이 확보// 없으면 내용만큼만 높이 생김
 
     & > * {
-        border: 1px solid green;
+        border: 1px solid beige;
         background-color: beige;
-        padding: 18px;
+        padding: 10px;
         /* grid-column: 1 / span 12; */
     }
     @media (min-width: ${sm}){
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
        grid-template-areas: 
        "hd hd"
        "nv nv"
@@ -45,7 +45,7 @@ export const Container = styled.div`
        ;
     }
     @media (min-width: ${md}){
-        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-columns: 1fr 4fr 1fr;
         grid-template-areas: 
        "hd hd hd"
        "nv ct sb"
@@ -58,6 +58,11 @@ export const Container = styled.div`
 
 export const Head = styled.header`  //상속 
     grid-area: hd;
+    color:#fff; font-size:1.5rem;
+    background-color:#333;
+    margin: 0;
+    display: flex;
+    align-items: center;
 `;
 
 export const Nav = styled.nav`

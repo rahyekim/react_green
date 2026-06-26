@@ -8,6 +8,14 @@ import Special from './sub/Special';
 import Test from './sub/Test';
 import TestHome from './TestHome';
 
+import Array from './sub/Array';
+import Tuple from './sub/Tuple';
+import Enum from './sub/Enum';
+import Interface from './sub/Interface';
+import Object from './sub/Object';
+import Tensorflow from './sub/Tensorflow';
+
+
 const App = () => {
   return (
     <>
@@ -18,9 +26,15 @@ const App = () => {
         <M.Nav>
           <ul>
             <li><M.StyledLink to="/">home</M.StyledLink></li>
-            <li><M.StyledLink to="/basic">Basic</M.StyledLink></li>
-            <li><M.StyledLink to="/special">Special</M.StyledLink></li>
+            <li><M.StyledLink to="/basic">1_Basic</M.StyledLink></li>
+            <li><M.StyledLink to="/special">1.1_special</M.StyledLink></li>
             <li><M.StyledLink to="/test">test</M.StyledLink></li>
+            <li><M.StyledLink to="/array">2_array</M.StyledLink></li>
+            <li><M.StyledLink to="/tuple">3_tuple</M.StyledLink></li>
+            <li><M.StyledLink to="/enum">4_enum</M.StyledLink></li>
+            <li><M.StyledLink to="/object">5_objectType</M.StyledLink></li>
+            <li><M.StyledLink to="/interface">6.interface</M.StyledLink></li>
+            <li><M.StyledLink to="/tensor">7.tensorflow</M.StyledLink></li>
           </ul>
         </M.Nav>
         {/*✨ 레이아웃은 유지하고 content만 교체 ✨*/}
@@ -32,6 +46,13 @@ const App = () => {
             <Route path='/special' element={<Special/>}></Route>
             <Route path='/test' element={<Test/>}></Route>
             <Route path='/test/home' element={<TestHome/>}></Route>
+
+            <Route path='/array' element={<Array/>}></Route>
+            <Route path='/tuple' element={<Tuple/>}></Route>
+            <Route path='/enum' element={<Enum/>}></Route>
+            <Route path='/object' element={<Object/>}></Route>
+            <Route path='/interface' element={<Interface/>}></Route>
+            <Route path='/tensor' element={<Tensorflow/>}></Route>
            
           </Routes>
         </M.Content>
