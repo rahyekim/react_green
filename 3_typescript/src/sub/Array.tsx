@@ -85,7 +85,18 @@ const Array = () => {
             유니온(User | Admin), 튜플, 함수 타입, 타입 조합 (복잡한타입) → type
         </p>
         
-        
+      {/*
+interface ButtonProps {
+  text: string;
+  color: string;
+}
+
+function Button({ text, color }: ButtonProps) {
+  return <button style={{ color }}>{text}</button>;
+}
+
+<Button text="확인" color="red" />
+       */}
         </>
     )
 };

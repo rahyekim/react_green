@@ -62,7 +62,10 @@ export const Head = styled.header`  //상속
     background-color:#333;
     margin: 0;
     display: flex;
-    align-items: center;
+    align-items: center;  //세로가운데정렬 
+    padding-left: 20px; //왼쪽여백
+    /* gap: 10px;           로고와 글자 사이 간격 */
+
 `;
 
 export const Nav = styled.nav`
