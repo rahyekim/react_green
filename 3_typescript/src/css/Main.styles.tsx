@@ -61,7 +61,7 @@ export const Head = styled.header`  //상속
     color:#fff; font-size:1.5rem;
     background-color:#333;
     margin: 0;
-    display: flex;
+    display: flex;   //정렬!!!!
     align-items: center;  //세로가운데정렬 
     padding-left: 20px; //왼쪽여백
     /* gap: 10px;           로고와 글자 사이 간격 */
