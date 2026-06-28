@@ -18,8 +18,13 @@ const Tensorflow:React.FC   = () => {  //FC : 파일 컴포넌트  React.FC
         //Tensorflow 작업하는 함수를 만듦 why async? 학습을 하는데 시간이 걸린다
         //그래서 기다릴 수 있는 함수 만들어.....
         const runTensorflow = async  () => {
+
+            if (!tf || !Plotly) {
+                console.error("Tensorflow 또는 Plotly 라이브러리가 로드되지 않았습니다.");
+                return;
+            }
             
-            //학습
+            //1.학습 데이터 준비
             const xs = tf.tensor([0,1,2,3,4])
             const ys = xs.mul(1.2).add(5); //y=  (1.2)x곱하고 +5
             //ai에게 결과를 알려줌
@@ -58,7 +63,7 @@ const Tensorflow:React.FC   = () => {  //FC : 파일 컴포넌트  React.FC
                 
                 //텐서는 메모리를 왕창 사용=> 사용끝냇으면 삭제
                 
-                result.dispose();
+                result.dispose(); //메모리 해제
             }
                 //6.결과 시각화
                 if(plotRef.current) { //데이터를 그릴 div가 존재하는지 확인
@@ -82,7 +87,8 @@ const Tensorflow:React.FC   = () => {  //FC : 파일 컴포넌트  React.FC
                 xs.dispose();
                 ys.dispose();
             
-        }
+        };
+
           runTensorflow(); 
     }, []);
 
@@ -98,8 +104,8 @@ const Tensorflow:React.FC   = () => {  //FC : 파일 컴포넌트  React.FC
         ) : (
             <p> 학습와료 예측 결과가 그래프에 표시됩니다</p>
         )}
-        <div ref={plotRef}></div>
-
+        <div ref={plotRef}/>
+        <p>
         <h1>구글에서 만든 딥러닝 프레임워크</h1>
         - 주요특징 -
         (1) 브라우저 내 학습 및 추론 : 서버없이 사용자의 브라우저에서 머신러닝 모델 실행
@@ -114,14 +120,24 @@ const Tensorflow:React.FC   = () => {  //FC : 파일 컴포넌트  React.FC
         Sequential Model: 레이어를 순차적으로 쌓는 가장 기본적인 모델형태
         Dense layer : 모든 입력과 출력이 연결된 전결합층 선형회귀 구현시 사용
         Loss(손실함수) : 모델이 얼마나 틀렸는지 계산
-        Optimizer(최적화): 틀린 만큼 모델의 가중치를 수정하는 알고리즘 (예) sgd확률적 ?????
+        Optimizer(최적화): 틀린 만큼 모델의 가중치를 수정하는 알고리즘 (예) 예 sgd확률적 경사 하강법
         
         -텐서플로우설치
         npm install @tensorflow/tfjs plotly.js-dist-min
 
         선형(linear) : 데이터의 관계가 1차 방정식 직선의 형태를 띌 것이라 가정
-        회귀(reprogression): 데이터들이 아뭉리 흩어져 있어도 결국은 어떤 특정한 평균적인 선(경향성)
+        회귀(Regression): 데이터들이 아뭉리 흩어져 있어도 결국은 어떤 특정한 평균적인 선(경향성)
         으로 되돌아가려는(회귀하려는) 성질을 으ㅣ미
+
+
+        수식: y = Wx + b
+        x (입력 변수): 우리가 알고 있는 데이터 (예: 집의 평수, 공부한 시간)
+        y (출력 변수): 우리가 예측하고 싶은 값 (예: 집의 가격, 시험 점수)
+        W (가중치, Weight): 직선의 기울기. x가 y에 얼마나 큰 영향을 미치는지 나타냅니다.
+        b (편향, Bias): 직선의 높낮이(y절편). x가 0일 때의 기본값을 의미합니다.
+        선형 회귀의 최종 목표는 수많은 x와 y데이터 쌍을 보고, 
+        가장 오차가 적은 최적의 W와 b를 찾아내는 것입니다.
+        </p>
         </>
         
     );
