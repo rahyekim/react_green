@@ -1,7 +1,9 @@
 import { useState } from "react"; // 데이터를 저장하고 변경할 수 있는 기능(상태)
 
 /* 1. 데이터의 타입(모양) 정의 */
-interface Todo { id: number, text:string}
+interface Todo { 
+    id: number; 
+    text:string}
 
 const Array = () => {
 
@@ -83,6 +85,8 @@ const Array = () => {
         <p> 객체의 구조를 정의 → interface  
             ...선언 병합...가능... 상속(확장)..extends <br/>
             유니온(User | Admin), 튜플, 함수 타입, 타입 조합 (복잡한타입) → type
+
+            interface {}, type = { } // 쉼표,세미콜론 상관없대...신기...
         </p>
         
       {/*
