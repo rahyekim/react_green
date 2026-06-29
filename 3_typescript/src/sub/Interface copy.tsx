@@ -46,7 +46,17 @@ const Interface= ()=>{
 
     }
 
-    const handleAddTodo = (e)=>{
+    /*
+    input onChange 👉 React.ChangeEvent<HTMLInputElement> 
+    form onsubmint 👉 React.FormEvent<HTMLFormElement>
+    button onClick 👉 React.MouseEvent<HTMLButtonElement>  
+
+    input  → ChangeEvent (+textarea)
+    form   → FormEvent
+    click  → MouseEvent (+div)
+     */
+    
+    const handleAddTodo = (e:React.FormEvent<HTMLFormElement>)=>{ //👉 React + TypeScript에서 e는 반드시 이벤트 타입을 지정
 
         e.preventDefault()
         if(text.trim() === '') return;

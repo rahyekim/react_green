@@ -33,7 +33,7 @@ const Array = () => {
             text : inputText // 입력창에 있는 글자 저장 
         }
         //기존 배열을 복사하고 맨뒤에 새 항목을 추가한 새로운 배열을 만든다..
-        setTodos([...todos, newTodo]) 
+        setTodos(prev=>[...prev, newTodo]) 
         
         //마지막으로 입력창에 쓴 건 데이터가 입력되고 입력창을 비움
         setInputText("");
@@ -41,15 +41,13 @@ const Array = () => {
     /*삭제 버튼을 누르면 실행되는 함수-> 삭제할 ID를 매개변수로 전달받는다*/
 
     const handleDeleteTodo = (id:number) => {
-        const updateTodos = todos.filter(todo => todo.id !== id)
-        //아이디 2번을 삭제할때 2번을 제외한 다른 아이디들을 출력...
-        setTodos(updateTodos);
-
+        // const updateTodos = todos.filter(todo => todo.id !== id)
+        // //아이디 2번을 삭제할때 2번을 제외한 다른 아이디들을 출력...
+        // setTodos(updateTodos);
+        setTodos(prev=> prev.filter(todo=> todo.id !== id)); 
     }
 
-
-    
-    
+       
     return(
         <>
         <h1>할일 목록</h1>
