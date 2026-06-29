@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const AppContainer = styled.div`
 display: grid;
@@ -42,4 +43,24 @@ justify-content: space-around; // 왼쪽 오른쪽 공간을 띄운후 정렬
 align-items: center;
 background-color: #fff; //#ffffff = 6자리일치하면 3개로 줄일수있음
 border-top:1px solid #e0e0e0;
+`;
+
+
+export const StyledLink = styled(Link)`  //참조...
+
+padding: 10px 14px;
+border-radius: 10px;
+color: #111;
+text-decoration: none;
+font-weight: 500;
+
+transition: all 0.2s ease;
+
+&:hover {
+    background-color: #f2f2f2;
+}
+
+&:active{  //눌렀을때 
+    transform: scale(0.97);
+}
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProductGrid = styled.div`
 display: grid;
-grid-template-columns: 1fr;
+grid-template-columns: 1fr 1fr;
 gap: 16px;
 
 `;
@@ -26,7 +26,7 @@ color: #adb5bd;
 `;
 
 export const ProductInfo = styled.div`
-display: flex; ///정렬!! -> gap 사용가능 (요소 “사이”에만 적용됨) => 자동관리
+display: flex; ///정렬!! -> gap 사용가능(요소 “사이”에만 적용됨) => 자동관리
 flex-direction: column;
 padding: 12px; 
 gap:4px;
@@ -46,5 +46,12 @@ gap:4px;
     color: #0d62fd;
     margin-top: 8px;
 }
-
 `;
+
+export const Title = styled.h2`
+
+    margin-bottom: 16px;
+    font-size: 1.2rem ;
+`;
+
+

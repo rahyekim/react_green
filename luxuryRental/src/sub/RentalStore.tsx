@@ -10,13 +10,13 @@ const products= [
 ]
 
 
-const RentalStore = () => {
+export const RentalStore = () => {
 
     
     
     return(
         <>
-        <h2 style={{marginBottom:'16px', fontSize:"1.2rem"}}>추천 렌탈 상품</h2>
+        <R.Title>추천 렌탈 상품</R.Title>
         <R.ProductGrid>{products.map(p=>(
             <R.ProductCard key={p.id}>
                 <R.ProductImage>IMG</R.ProductImage>
@@ -31,5 +31,3 @@ const RentalStore = () => {
         </>
     )
 };
-
-export default RentalStore;
