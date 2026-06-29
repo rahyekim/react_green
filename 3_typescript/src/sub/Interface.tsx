@@ -28,7 +28,7 @@ const TodoItem = ({todo, onToggle}: TodoItemProps) => {
         style={{ textDecoration: todo.isCompleted ? "line-through" : "none",
                  color: todo.isCompleted ? "gray" : "black",
          }}>
-            {todo.isCompleted && "✔"}{todo.text}</span>
+            {!todo.isCompleted && "✔"}{todo.text}</span>
         </li>
     )
 
@@ -56,7 +56,7 @@ const Interface = () => {
     return(
         <>
         <h1>오늘의 할일</h1>
-        <ul>
+        <ul style={{listStyle: "none"}}>
             {todos.map(todo=> ( 
                 <TodoItem key={todo.id} todo={todo} onToggle={handleToggle}/>
             ))}
