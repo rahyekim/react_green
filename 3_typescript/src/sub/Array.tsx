@@ -87,6 +87,22 @@ const Array = () => {
             유니온(User | Admin), 튜플, 함수 타입, 타입 조합 (복잡한타입) → type
 
             interface {}, type = { } // 쉼표,세미콜론 상관없대...신기...
+
+            👉 제네릭은 “함수를 만들 때”가 아니라 “함수를 사용할 때” 타입이 정해진다.
+            (1) 선언할 때 (아직 모름)
+            {/*
+            🟢 function getData<T>(): Promise<T> {}     👉 T는 아직 비어있는 자리
+           
+            (2) 사용할 때 (이때 결정됨)
+           
+            getData<User>()  👉 이 순간 결정 T = User
+           
+            🟢 function identity<T>(value: T): T {}
+
+            <T> = 타입 자리 만들기
+            (value: T) = 실제 입력값 
+            : T = 출력 타입
+             */}
         </p>
         
       {/*
