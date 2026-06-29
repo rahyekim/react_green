@@ -41,7 +41,11 @@ const Interface= ()=>{
 
     const handelToggle = (id:number) => {
         setTodos(prev=> (
-            prev.map(todo=> (todo.id===id ? {...todo, isCompleted: !todo.isCompleted} : todo))
+            prev.map(todo=> 
+                (todo.id===id 
+                ? {...todo, isCompleted: !todo.isCompleted} 
+                : todo
+            ))
         ))
 
     }
@@ -59,13 +63,14 @@ const Interface= ()=>{
     const handleAddTodo = (e:React.FormEvent<HTMLFormElement>)=>{ //👉 React + TypeScript에서 e는 반드시 이벤트 타입을 지정
 
         e.preventDefault()
-        if(text.trim() === '') return;
+        if(text.trim() === '') return; //⭐⭐⭐
         
         setTodos(prev=> [
             ...prev, 
             { id: Date.now(), text: text, isCompleted: false}
         ]);
-        setText("");
+        setText("");  //⭐⭐⭐
+
     }
 
     const handleDelete = (id:number)=>{
@@ -91,14 +96,11 @@ const Interface= ()=>{
             
             {todos.length ===0 ? (<p>할일을 추가해주세요</p>) : (
             todos.map(todo=> (
-                <>
                 <TodoItem 
                     key={todo.id}
                     todo={todo}
                     onDelete={handleDelete}
                     onToggle={handelToggle}/>
-                   
-                </>
             )
             ))}
         </ul>
