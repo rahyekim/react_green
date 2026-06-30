@@ -18,7 +18,7 @@ interface LayoutProps {
 
 function App ({children} : LayoutProps) {  //엄격모드제거 
 
-  const navigate = useNavigate();  //✨BrowserRouter 내부에서 실행되어야함!!
+  const navigate = useNavigate();  //🔵BrowserRouter 내부에서 실행되어야함!!
 
   return(
     <>
@@ -27,7 +27,7 @@ function App ({children} : LayoutProps) {  //엄격모드제거
       <S.Header>
         <Link to='/'>럭셔리 플랫폼 MVP</Link>
       </S.Header>
-      <S.MainContent>{children}</S.MainContent>
+      <S.MainContent>{children}</S.MainContent> {/* URL에 따라 바뀌는 콘텐츠 영역 */}
       <S.BottomNav>
         <button onClick={()=> navigate('/rentalstore')}>렌탈/스토어</button>
         <button onClick={()=> navigate('/restoration')}>수선/복원</button>
@@ -40,7 +40,7 @@ function App ({children} : LayoutProps) {  //엄격모드제거
 }
 
 createRoot(document.getElementById('root')!).render(
-   <BrowserRouter>
+   <BrowserRouter>  {/*BrowserRouter는 반드시 Routes를 사용하는 컴포넌트 상위에서 감싸야 합니다.*/}
    <App>
       <div>
         <Routes>

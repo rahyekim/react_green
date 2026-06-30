@@ -1,4 +1,3 @@
-import { useState } from "react";
 import * as R from '../css/RentalStore.styles';
 
 //Mock Data 임시데이터
@@ -8,7 +7,6 @@ const products= [
     {id:3, brand:'구찌', name:'홀스빗 1955', price: "₩50,000/일"},
     {id:4, brand:'디올', name:'레이디 디올', price: "₩50,000/일"},
 ]
-
 
 export const RentalStore = () => {
 
