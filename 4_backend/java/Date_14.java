@@ -6,7 +6,7 @@ java.util.Date and Calendar 는 치명적인 설계의 결함
 생성된 날짜 객체의 값을 setter로 바꿀 수있다.
 명확하지 않은 이름 Date라고 하지만 실제로는 시간까지 포함
 자바에서는...java.time 도입 
-이패키지의 핵심뼈대 Temporal 인터페이스 
+이패키지의 핵심뼈대가 Temporal 인터페이스 
 3대장 :모두 불변으로 안전
 🟢 LocalDate: 날짜만 필요할때 
 🟢 LocalTime: 시간만
@@ -26,11 +26,11 @@ public class Date_14 {
     public void issueCouponMordern(){
         LocalDateTime issuDate = LocalDateTime.now();
         LocalDateTime expirDate = issuDate.plusMonths(1);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         
         System.out.println("쿠폰발급");
         System.out.println("발급일: " + issuDate.format(formatter));
-        System.out.println("발급일: " + expirDate.format(formatter));
+        System.out.println("만료일: " + expirDate.format(formatter));
         
         //비지니스 로직 
         boolean isValid = LocalDateTime.now().isBefore(expirDate);

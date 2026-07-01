@@ -13,11 +13,12 @@ enum OrderStatus { // 자바에서 public은 한 번만 나와야함, enum사용
     DELIVERED("배송완료", false),
     CANCELED("주문취소", false); // 👈 세미콜론 필수
 
-    // 2.필드정의 : final을 붙여 안전하게 보호
+    // 2.필드정의 : final(불변성)을 붙여 안전하게 보호 & private(캡슐화)
     private final String description; // 화면에 노출될 설명
     private final boolean cancellable; // 취소가능여부
 
     // 3.생성자(💡enum에서의 생성자는 private) : new orderstatus 못찍어내게
+    //private OrderStatus(){} : private 생략가능하나 public쓰면안됨
     OrderStatus(String description, boolean cancellable) {
         this.description = description;
         this.cancellable = cancellable;
@@ -28,38 +29,44 @@ enum OrderStatus { // 자바에서 public은 한 번만 나와야함, enum사용
         return description;
     }
 
-    public boolean getCancellable() {
+    public boolean isCancellable() {
         return cancellable;
     }
 
     // 5.실무활용로직
+    // static이 있으니까 new 없이 바로 호출 가능!(new 못쓰잖아)
     public static OrderStatus from(String name) {
         /*
          * 정적팩토리 메서드(static) 객체를 생성하거나 반환할때 사용하는 패턴
-         * 하나의 매개변수를 받아서 해당 타입의 인스턴스를 반환할때(실사용 객체)
+         * 하나의 매개변수를 받아서(String name: "SHIPPED") 
+         * 해당 타입의 인스턴스(OrderStatus.SHIPPED)를 반환할때(실사용 객체)
          * 실무에서는 관례적으로 from이나 of라는 메서드 이름을 사용
          */
 
         return Arrays.stream(OrderStatus.values()) //배열로...
             // 이배열을 자바스크립트로 변환-> for반복문을사용하지않고 데이터를 함수형으로 깔금하게 처리하기
-            // 위한 ??
+            // 위한 시작
             /*
                 * orderstatus.values() 모든상수를 배열로 전환=>
                 * Stream=> filter(),map(),findFirst() 등 메서드 기능활용할수있음
                 */
             .filter(status -> status.name().equalsIgnoreCase(name)) //대소문자 무시하고 비교
-
+/*
+status.name enum상수의 원래 이름  (예:"DELiVERED")   
+외부 API나 프론트엔드에서  대소문자를 섞어서 보내더라도
+무시하고 일치하는지 검사   
+*/
             .findFirst()// 필터링조건에 맞는 첫번째 요소 찾기
             // 찾은값이 없으면? 메세지 남김
-            .orElseThrow(() -> new IllegalArgumentException("잘못된주문상태입니다: " + name));
+            .orElseThrow(() -> new IllegalArgumentException("알수없는 주문상태입니다: " + name));
     }
 
 }
 
-public class Enum_13 { // enum을 끌어다 사용하는 클래스는
+public class Enum_13 { // enum을 끌어다 사용하는 클래스는..문기만한
 
     public void cancelOrder(OrderStatus currentStatus) {
-        if (currentStatus.getCancellable()) {
+        if (currentStatus.isCancellable()) {
             System.out.println("주문이정상취소되었습니다");
         } else {
             System.out.println("취소불가 현재상태 [" + currentStatus.getDescription() + "] 입니다");
@@ -68,9 +75,9 @@ public class Enum_13 { // enum을 끌어다 사용하는 클래스는
 
     public static void main(String[] args) {
 
-        Enum_13 service = new Enum_13();
+        Enum_13 service = new Enum_13(); //객체선언
 
-        // 상품중비중일때 취소시도
+        // 상황1 상품중비중일때 취소시도
         OrderStatus status1 = OrderStatus.PREPARING;
         service.cancelOrder(status1);
 
@@ -156,6 +163,21 @@ equals()       값 (내용 비교)              실제 데이터
 🔥 문자열 비교(String)는 .equals() 써야함
 
 enum은 예외 JVM에서 객체가 하나만 존재(싱글톤) : == 써도 안전
+*/
+
+/*
+➡️ static이 없는 일반 메서드 (인스턴스 메서드)
+🔥 new를 통해 객체를 생성해야만 쓸 수 있음 
+(각 객체마다 다른 데이터를 다룰 때 사용)
+
+➡️ static이 있는 메서드 (정적 메서드): 
+공통으로 쓰이는 기능 또는 from 처럼 객체를 조회/생성해 주는 공장 역할을 할 때 사용
+🔥 new 없이 클래스 이름으로 바로 쓸 수 있음
+프로그램이 실행되는 순간 메모리에 딱 하나 알아서 올라가기 때문에, 
+클래스 이름에 점(.)만 찍어서 바로 쓸 수 있습니다.
+->객체마다 상태를 다르게 가질 필요가 없는 '순수한 기능(유틸리티)'일 때는 
+굳이 new로 메모리를 낭비할 필요 없이 static으로 만드는 것이 훨씬 편함
+
 */
 
 /*
