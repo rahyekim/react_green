@@ -52,7 +52,7 @@ const Interface= ()=>{
 
     /*
     input onChange 👉 React.ChangeEvent<HTMLInputElement> 
-    form onsubmint 👉 React.FormEvent<HTMLFormElement>
+    form onsubmint 👉 React.SubmitEvent<HTMLFormElement>
     button onClick 👉 React.MouseEvent<HTMLButtonElement>  
 
     input  → ChangeEvent (+textarea)
