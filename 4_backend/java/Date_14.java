@@ -11,6 +11,7 @@ java.util.Date and Calendar 는 치명적인 설계의 결함
 🟢 LocalDate: 날짜만 필요할때 
 🟢 LocalTime: 시간만
 🟢 LocalDateTime: 날짜시간 
+ZonedDateTime //Duration / Period
 plusDays(), minusMonths()와같이 인간의 언어에 가까운 직관적인 메서드 제공
  */
 
@@ -61,3 +62,24 @@ public class Date_14 {
     
     
 }
+
+/*
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+public class DateExam {
+    public static void main(String[] args) {
+        // 1. 오늘 날짜 구하기 (연-월-일 깔끔하게 나옴!)
+        LocalDate today = LocalDate.now();
+        System.out.println("오늘: " + today); // 출력 예: 2026-07-01
+
+        // 2. 100일 뒤 계산하기 (기존 오늘 날짜는 변하지 않고, 새 날짜를 반환!)
+        LocalDate hundredDaysLater = today.plusDays(100);
+        System.out.println("100일 뒤: " + hundredDaysLater);
+
+        // 3. 특정 날짜와 시간 지정하기
+        LocalDateTime appointment = LocalDateTime.of(2026, 12, 25, 14, 30);
+        System.out.println("크리스마스 약속: " + appointment); // 2026-12-25T14:30
+    }
+}
+*/

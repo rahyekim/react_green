@@ -15,6 +15,7 @@ import Interface from './sub/Interface';
 import Object from './sub/Object';
 import Tensorflow from './sub/Tensorflow';
 import { ClassUnion } from './sub/ClassUnion';
+import { Last } from './sub/Last';
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
             <li><M.StyledLink to="/interface">6.interface</M.StyledLink></li>
             <li><M.StyledLink to="/tensor">7.tensorflow</M.StyledLink></li>
             <li><M.StyledLink to="/classunion">8.classUnion</M.StyledLink></li>
+            <li><M.StyledLink to="/last">9.last🎉</M.StyledLink></li>
           </ul>
         </M.Nav>
         {/*✨ 레이아웃은 유지하고 content만 교체 ✨*/}
@@ -55,6 +57,7 @@ const App = () => {
             <Route path='/interface' element={<Interface/>}></Route>
             <Route path='/tensor' element={<Tensorflow/>}></Route>
             <Route path='/classunion' element={<ClassUnion/>}></Route>
+            <Route path='/last' element={<Last/>}></Route>
            
           </Routes>
         </M.Content>
