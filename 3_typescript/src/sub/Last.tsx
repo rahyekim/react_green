@@ -4,14 +4,13 @@ import React, { useState } from "react"
 // 데코레이터 함수 : 함수를 실행하는 게 아니라, 🌱함수를 수정🌱함 
 // ...가로채서기능을 추가/변경하는 함수
 function LogExecution(
-    target:any, 
-    propertyKey: string, 
-    descriptor: PropertyDescriptor) {
+    originalMethod:any, 
+    context: ClassMethodDecoratorContext) {
 
-    const originalMethod = descriptor.value;
+    const methodName = String(context.name);
     //원래 함수를 새로운 함수로 교체 
-    descriptor.value = function(...args:any[]){
-        console.log(`[데코레이터 로그] ${propertyKey} 메서드실행됨`)
+    return function replacementMethod(this:any, ...args:any[]){
+        console.log(`[데코레이터 로그] ${methodName} 메서드실행됨`)
         return originalMethod.apply(this, args); //원래 함수 실행
     }
 
@@ -40,6 +39,31 @@ namespace DashBordApp{
     //1.keyof 객체t와 그객체가 가진 키만 인자로 받도록 강제하는 유틸함수
     function getConfigValue<T, K extends keyof T> (obj:T, key:K): T[k] {
         return obj[key];
+    }
+    //커스텀 에러 클래스 정의
+    class ApiError extends Error{   //기본Error클래스 상속
+        //1.멤버 변수를 명시적으로 선언
+        statusCode: number;
+        
+        constructor( statusCode: number, message: string){
+            super(message); //부모클래스 생성자 호출
+            this.statusCode = statusCode; //404 400 500
+            this.name ='ApiError';
+        }
+    }
+    //데이터 서비스 클래스
+    class DataService {
+        @LogExecution // 13데코레이터사용
+        async fetchMockData () :Promise<string>{
+            return new Promise((resolve,reject)=> 
+                setTimeout(()=> {
+                    if(Math.random()>0.6){
+                        reject(new ApiError(500, "서버응답실패"));
+                    }
+                    resolve('서버에서 가져온 1급 기밀 데이터');
+                },1000)
+            )
+        }
     }
 }
 
