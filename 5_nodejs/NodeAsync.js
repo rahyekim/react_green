@@ -34,3 +34,8 @@ const fs = require('fs'); // fileSystem : 파일을 읽거나 사용하는 노�
 
  console.log("2. 나 먼저 퇴근함~ (비동기 증거)");
 
+/*
+
+throw err 즉시 강제 종료 (다운)
+console.error + return 계속 살아있음 (정상 작동)
+*/
