@@ -12,9 +12,13 @@ class Box<T> {  // type parameter => <T> 아직 정해지지 않은 타입을 �
     T value ; //상자안에 실제로 들어갈 내용물...
 
     //상자안에 내용물을 넣는 ㄴ매서드 
-    void set (T value){this.value = value;}
+    void set (T value){
+        this.value = value;
+    }
     //상자에서 내용물을 꺼내는 메서드
-    T get(){return value;}
+    T get(){
+        return value;
+    }
 }
 
 public class Generic_21 {
