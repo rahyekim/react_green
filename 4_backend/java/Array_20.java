@@ -48,8 +48,12 @@ public class Array_20 {
 
         String listVSarrayList = "list는 변수타입, 매개변수리턴타입선언시"+
         "array리스트 new 키워드를 통해 실제 리스트데이터를 담을 메모리객체 생성할때"+
-        "사용해주세요"
-        ;
+        "사용해주세요"+
+        "유연한 코드: List<String> 쓰면 쉽게 바꾸기 가능 "+
+        "✨ List<String> list = new ArrayList<>();"+
+        "✨ List<String> list = new LinkedList<>();";
+        
+        
     }
 }
 
@@ -68,4 +72,26 @@ public class Array_20 {
  - 조회 (방 찾기) - 느림 🐌 0번부터 시작해서 "너 다음 사람 주소 뭐야?" 물어물어 3번까지
 - 추가/삭제 - 초고속 🚀: 중간에 뭘 끼워 넣을 때, 이사 갈 필요 없이 앞뒤 사람 손잡이(링크)만 슥 바꿔 쥐여주면
  
+*/
+
+
+/*
+인터페이스: "이런 기능은 반드시 만들어!" 라고 약속하는 설계도
+class Dog implements Animal {}
+
+List 인터페이스 : add()remove()get()size()기능 정의 
+implements : 기능약속을구현하는것**
+
+class ArrayList implements List {}
+
+➡️ArrayList는 List를 구현한 클래스
+
+List<String> list = new ArrayList<>();
+인터페이스로 선언 = 구현체로 생성 
+
+⭐⭐
+오버라이딩: 부모 클래스(extends)나 인터페이스(implements)의 메서드를 재정의하는 것.
+오버로딩: 메서드 이름은 같고 매개변수(개수 또는 타입)가 다른 메서드를 여러 개 정의
+⭐⭐
+
 */

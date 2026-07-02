@@ -34,7 +34,7 @@ public class Poly_8 {
         Animal myAnimal = new Animal();
         Animal myPig = new Pig();
         Animal myCat = new Cat();
-
+       // 내용물로 채워 부모타입으로 자식객체를 담는 것이 다형성의 시작
         myAnimal.animalSound();
         myCat.animalSound();
         myPig.animalSound();
