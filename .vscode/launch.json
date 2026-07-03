@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Inherit",
+      "request": "launch",
+      "mainClass": "Inherit",
+      "projectName": "ra_react_140828e8"
+    },
+    {
+      "type": "java",
+      "name": "inherit",
+      "request": "launch",
+      "mainClass": "inherit",
+      "projectName": "ra_react_140828e8"
+    },
+    {
+      "type": "java",
+      "name": "Exc",
+      "request": "launch",
+      "mainClass": "Exc",
+      "projectName": "ra_react_140828e8"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "d:/ra_react/7_study",
+      "program": "d:/ra_react/7_study/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
