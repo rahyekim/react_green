@@ -75,9 +75,53 @@ function updateAddressField(key: keyof UserAddress, value:string){
 }
 updateAddressField("city", "Daejun");
 
+interface User{
+    name: string;
+    age: number;
+}
+//인덱스시그니쳐
+interface Users {
+    [key: string] : User;
+}
+//요즘대세Record방식
+type Users = Record<User,string>;
+
+//✨ 리터럴 타입 (특정 단어 그 자체가 타입!)
+type Brand = "Nike" | "Adidas" | "NB" ;
+
+type BrandInventory = Record<Brand, number>;
+
+const myStore :BrandInventory = {
+    Nike: 100,
+    Adidas: 50,
+    NB: 30,
+}
+
+interface Form{
+    email: string;
+    password: string;
+}
+//Partial<> ?: 모든 속성을 optional로 만들어줌
+
+const erros: Partial<Record<keyof Form,string>>={}
 
 
+interface User{
+    id:number;
+    name: string;
+    email: string;
+    password: string;
+}
+type Props= Pick<User, "name"|"email">;
 
+function UserCard(user:Props){};
+
+//Pick을 만든 코드 (구현)
+type Pick<T, K extends keyof T> ={
+    [P in K]: T[P];
+}
+//K는 T의key만가능!!! (extends) 
+//T는 객체타입
     return(
         <>
         <h1>마지막으로 중요한 14가지</h1>
@@ -102,7 +146,12 @@ updateAddressField("city", "Daejun");
 (13)🌟.Decorators : 클래스나 매서드위에 @함수명 형태로 붙여서 기존 코드 건드리지 않고
 기능을 덧붙이거나 수정하는 장식자
 (14).🌟Error Handling: try...catch
+⭐ Pick 꺽쇠: 기존 타입을 재사용해서 필요한 속성만 가져오고, 중복 타입 선언을 줄이는 것 ...반대가 Omit 이거빼고다
+⭐ Partial 꺽쇠 ?: 만들어줌
+⭐ 제네릭에서의 extends(제한) 이타입만사용할수있어.. (class상속개념x)
+Record 꺽쇠:👉 키와 값의 타입을 이용해서 새로운 객체 타입 "만들기"
         </p>
+        
 
         </>
     )
